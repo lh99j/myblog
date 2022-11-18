@@ -2,7 +2,7 @@
 
 ![Untitled](assets/images/profileimg.jpg)
 
-Last Updated. 2022/11/09
+Last Updated. 2022/11/09 <br>
 노션 링크 : https://www.notion.so/d395704294c94e7cbf84edb9e94330b0
 
 - **#Kotlin #Java #안드로이드**
