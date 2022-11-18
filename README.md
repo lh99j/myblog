@@ -1,4 +1,4 @@
-# 행복한 꿈을 꾸는 개발자
+# 행복한 꿈을 꾸는 개발자 ( https://www.notion.so/d395704294c94e7cbf84edb9e94330b0 )
 
 ![Untitled](assets/images/profileimg.jpg)
 
