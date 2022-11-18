@@ -60,4 +60,3 @@ Github를 이용하여 프로젝트를 관리하고 있습니다.
 
 - k-해커톤 대상 기사 : [https://jnuhongbo.jejunu.ac.kr/boards/hongbo_jnunews/16686619975957](https://jnuhongbo.jejunu.ac.kr/boards/hongbo_jnunews/16686619975957)
 - 카카오 트랙 장학금 : [https://jnuhongbo.jejunu.ac.kr/boards/hongbo_jnunews/16511216042606?s[s]=subject&s[q]=카카오](https://jnuhongbo.jejunu.ac.kr/boards/hongbo_jnunews/16511216042606?s%5Bs%5D=subject&s%5Bq%5D=%EC%B9%B4%EC%B9%B4%EC%98%A4)
--
