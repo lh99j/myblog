@@ -1,8 +1,9 @@
-# 행복한 꿈을 꾸는 개발자 ( https://www.notion.so/d395704294c94e7cbf84edb9e94330b0 )
+# 행복한 꿈을 꾸는 개발자
 
 ![Untitled](assets/images/profileimg.jpg)
 
 Last Updated. 2022/11/09
+노션 링크 : https://www.notion.so/d395704294c94e7cbf84edb9e94330b0
 
 - **#Kotlin #Java #안드로이드**
 - 모든 사람에게 좋은 영향을 주고 싶은 개발자입니다.
