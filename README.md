@@ -1,6 +1,6 @@
 # 행복한 꿈을 꾸는 개발자
 
-![Untitled](assets/images/profileimg.png)
+![Untitled](assets/images/profileimg.jpg)
 
 Last Updated. 2022/11/09
 
