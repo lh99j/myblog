@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>스위프트의 데이터 타입 | My Blog</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="스위프트의 데이터 타입">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="[스위프트]">
+<meta property="og:description" content="[스위프트]">
+<meta property="og:site_name" content="My Blog">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-12-07T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="스위프트의 데이터 타입">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2022-12-07T00:00:00+00:00","datePublished":"2022-12-07T00:00:00+00:00","description":"[스위프트]","headline":"스위프트의 데이터 타입","mainEntityOfPage":{"@type":"WebPage","@id":"/jekyll-theme-yat/swift/2022/12/07/20221207.html"},"url":"/jekyll-theme-yat/swift/2022/12/07/20221207.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/jekyll-theme-yat/feed.xml" title="My Blog">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="My Blog" src="" onerror="this.style.display='none'">
+  My Blog
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about.html">행복한 꿈을 꾸는 개발자</a><a class="page-link" href="/jekyll-theme-yat/archives.html">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories.html">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags.html">TAGS</a>
+
+
+
+
+
+
+
+
+
+<span class="page-link">
+
+
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  // Links to cross-origin destinations are unsafe
+  var gll = document.getElementsByClassName('goog-logo-link')[0];
+  if (gll) {
+    gll.setAttribute('rel', 'noopener');
+  }
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">스위프트의 데이터 타입</h1>
+  <h2 class="post-subtitle">2022/12/07(수요일)</h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2022-12-07T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Dec 07, 2022
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Switft">#Switft</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="스위프트">[스위프트]</h2>
+
+<h2 id="41-데이터-타입-안심">4.1 데이터 타입 안심</h2>
+
+<p>애플이 처음 스위프트를 발표할 때 강조했던 스위프트의 특징 중 <strong>안정성(safe)</strong>이 가장 뚜렷하게 나타나는 부분이다. 스위프트는 타이벵 굉장히 민감하고 엄격하다. 서로 다른 타입끼리의 데이터 교환은 꼭 <strong>타입캐스팅</strong>을 거쳐야 한다. 스위프트에서 값 타입의 데이터 교환은 엄밀히 말하면 타입캐스팅이 아닌 새로운 인스턴스를 생성하여 할당하는 것이다.</p>
+
+<h3 id="411-데이터-타입-안심이란">4.1.1 데이터 타입 안심이란?</h3>
+
+<p>스위프트는 데이터 타입을 안심하고 사용할 수 있는(Type-safe)언어이다. 타입을 안심하고 사용할 수 있다는 말은 그만큼 실수를 줄일 수 있다는 의미이다. 예를 들어 Int 타입 변수에 할당하려는 값이 Character 타입이라면 컴파일 오류가 발생한다. 이런 오류는 프로그래밍 도중에 눈치채기 어려워 컴파일러가 알려주지 않으면 나중에 오류를 찾아내기도 쉽지 않다. 그렇지만 스위프트는 컴파일 오류로 알려주므로 서로 다른 타입의 값을 할당하는 실수를 줄일 수 있다. 이렇게 스위프트가 컴파일 시 타입을 확인하는 것을 <strong>타입 확인</strong>이라고 한다. 타입 확인을 통해 여러 타입을 섞어 사용할 때 발생할 수 있는 런타임 오류를 피할 수도 있다.</p>
+
+<h3 id="412-타입-추론">4.1.2 타입 추론</h3>
+
+<p>스위프트에서는 변수나 상수를 선언할 때 특정 타입을 명시하지 않아도 컴파일러가 할당된 값을 기준으로 변수나 상수의 타입을 결정한다. 예를 들어 <code class="language-plaintext highlighter-rouge">let name = “hyungjun”</code> 라는 코드를 작성하면, 컴파일러가 컴파일하면서 name의 타입을 String으로 결정한다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 타입을 지정하지 않았으나 타입 추론을 통하여 name은 String 타입으로 선언된다.</span>
+<span class="k">var</span> <span class="nv">name</span> <span class="o">=</span> <span class="s">"Hyungjun"</span>
+
+<span class="c1">// 앞서 타입 추론에 의해 name은 String 타입의 변수로 지정되었기 때문에</span>
+<span class="c1">// 정수를 할당하려고 시도하면 오류가 발생한다.</span>
+<span class="n">name</span> <span class="o">=</span> <span class="mi">100</span>
+</code></pre></div></div>
+
+<h2 id="42-타입-별칭">4.2 타입 별칭</h2>
+
+<p>스위프트에서 기본적으로 제공하는 데이터 타입이든, 사용자가 임의로 만든 데이터 타입이든 이미 존재하는 데이터 타입에 임의로 다른 이름 (별칭) 을 부여할 수 있다. 그런 다음 기본 타입 이름과 이후에 추가한 별칭을 모두 사용할 수 있다. 아래 코드를 보면 쉽게 이해할 수 있을 것이다.기존에 사용하던 데이터 타입의 이름과 프로그래머가 만들어준 이름 모두 사용할 수 있다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">MyInt</span> <span class="o">=</span> <span class="kt">Int</span>
+<span class="kd">typealias</span> <span class="kt">YourInt</span> <span class="o">=</span> <span class="kt">Int</span>
+<span class="kd">typealias</span> <span class="kt">MyDouble</span> <span class="o">=</span> <span class="kt">Double</span>
+
+<span class="k">let</span> <span class="nv">age</span><span class="p">:</span> <span class="kt">MyInt</span> <span class="o">=</span> <span class="mi">100</span>         <span class="c1">// MyInt는 Int의 또 다른 이름이다.</span>
+<span class="k">var</span> <span class="nv">year</span><span class="p">:</span> <span class="kt">YourInt</span> <span class="o">=</span> <span class="mi">2000</span>     <span class="c1">// YourInt도 Int의 또 다른 이름이다.</span>
+
+<span class="c1">// MyInt, YourInt 모두 Int이기 때문에 같은 타입으로 취급한다.</span>
+<span class="n">year</span> <span class="o">=</span> <span class="n">age</span>
+
+<span class="k">let</span> <span class="nv">month</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">7</span>                <span class="c1">// 물론 기존의 Int도 사용가능하다.</span>
+<span class="k">let</span> <span class="nv">percentage</span><span class="p">:</span> <span class="kt">MyDouble</span> <span class="o">=</span> <span class="mf">99.9</span>   <span class="c1">// Int 외에 다른 자료형도 모두 별칭 사용 가능하다.</span>
+</code></pre></div></div>
+
+<h2 id="43-튜플">4.3 튜플</h2>
+
+<p><strong>튜플(Tuple)</strong>은 타입의 이름이 따로 지정되어 있지 않은, 프로그래머 마음대로 만드는 타입이다. <strong>‘지정된 데이터의 묶음’</strong>이라고 표현할 수 있다. C 언어를 예로 들자면 원시 구조체의 형태와 비슷하다.</p>
+
+<p>스위프트의 튜플은 파이썬의 튜플과 유사하다. 튜플은 타입 이름이 따로 없으므로 일정 타입의 나열만으로 튜플 타입을 생성해줄 수 있다. 튜플에 포함될 데이터의 개수는 자유롭게 정할 수 있다. 하나가 될 수도, 두 개가 될 수도, 여러개가 될 수도 있다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// String, Int, Double 타입을 갖는 튜플</span>
+<span class="k">var</span> <span class="nv">person</span><span class="p">:</span> <span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="s">"lhj"</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mf">174.4</span><span class="p">)</span>
+
+<span class="c1">// 인덱스를 통해서 값을 빼 올 수 있다.</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"이름 : </span><span class="se">\(</span><span class="n">person</span><span class="o">.</span><span class="mi">0</span><span class="se">)</span><span class="s">, 나이 : </span><span class="se">\(</span><span class="n">person</span><span class="o">.</span><span class="mi">1</span><span class="se">)</span><span class="s">, 신장 : </span><span class="se">\(</span><span class="mf">174.4</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+
+<span class="n">person</span><span class="o">.</span><span class="mi">1</span> <span class="o">=</span> <span class="mi">99</span>
+<span class="n">person</span><span class="o">.</span><span class="mi">2</span> <span class="o">=</span> <span class="mf">188.4</span>  <span class="c1">// 인덱스를 통해 값을 할당할 수 있다.</span>
+</code></pre></div></div>
+
+<p>위의 코드에서 튜플은 각 요소를 이름 대신 숫자로 표현하기 때문에 간편해 보일 수 있지만, 차후에 다른 프로그래머가 코드를 볼 때 각 요소가 어떤 의미가 있는지 유추하기가 어렵다. 이름 없이 인덱스만으로 각 요소으 ㅣ데이터가 무엇을 나타내는지 쉽게 파악하기가 어렵기 때문이다. 그래서 튜플의 요소마다 이름을 붙여줄 수 도 있다. 아래 코드에서는 튜플의 요소마다 이름을 붙인 것이다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// String, Int, Double 타입을 갖는 튜플</span>
+<span class="k">var</span> <span class="nv">person</span><span class="p">:</span> <span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">age</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="s">"lhj"</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mf">174.4</span><span class="p">)</span>
+
+<span class="c1">// 요소 이름ㅇ르 통해서 값을 빼 올 수 있다.</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"이름 : </span><span class="se">\(</span><span class="n">person</span><span class="o">.</span><span class="n">name</span><span class="se">)</span><span class="s">, 나이 : </span><span class="se">\(</span><span class="n">person</span><span class="o">.</span><span class="n">age</span><span class="se">)</span><span class="s">, 신장 : </span><span class="se">\(</span><span class="n">person</span><span class="o">.</span><span class="n">height</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+
+<span class="n">person</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">99</span>   <span class="c1">// 요소 이름을 통해 값을 할당할 수 있다.</span>
+<span class="n">person</span><span class="o">.</span><span class="mi">2</span> <span class="o">=</span> <span class="mf">188.4</span>  <span class="c1">// 인덱스를 통해서도 값을 할당할 수 있다.</span>
+
+<span class="c1">// 기존 처럼 인덱스를 이용하여 값을 빼 올 수도 있다.</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"이름 : </span><span class="se">\(</span><span class="n">person</span><span class="o">.</span><span class="mi">0</span><span class="se">)</span><span class="s">, 나이 : </span><span class="se">\(</span><span class="n">person</span><span class="o">.</span><span class="mi">1</span><span class="se">)</span><span class="s">, 신장 : </span><span class="se">\(</span><span class="mf">174.4</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>또, 튜플에는 타입 이름에 해당하는 키워드가 따로 없다 보니 사용에 불편함을 겪기도 한다. 매번 같은 모양의 튜플을 사용하고 싶은데 선언해줄 때마다 긴 튜플 타입을 모두 써줘야 하는 불편함이 생길 수 있기 때문이다. 이럴 때는 타입 별칭을 사용하여 조금 더 깔끔하고 안전하게 코드를 작성할 수 있다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">PersonTuple</span> <span class="o">=</span> <span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">age</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">lhj</span><span class="p">:</span> <span class="kt">PersonTuple</span> <span class="o">=</span> <span class="p">(</span><span class="s">"lhj"</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mf">174.4</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">jhl</span><span class="p">:</span> <span class="kt">PersonTuple</span> <span class="o">=</span> <span class="p">(</span><span class="s">"jhl"</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mf">188.4</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="s">"이름 : </span><span class="se">\(</span><span class="n">lhj</span><span class="o">.</span><span class="n">name</span><span class="se">)</span><span class="s">, 나이 : </span><span class="se">\(</span><span class="n">lhj</span><span class="o">.</span><span class="n">age</span><span class="se">)</span><span class="s">, 신장 : </span><span class="se">\(</span><span class="n">lhj</span><span class="o">.</span><span class="n">height</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"이름 : </span><span class="se">\(</span><span class="n">jhl</span><span class="o">.</span><span class="n">name</span><span class="se">)</span><span class="s">, 나이 : </span><span class="se">\(</span><span class="n">jhl</span><span class="o">.</span><span class="n">age</span><span class="se">)</span><span class="s">, 신장 : </span><span class="se">\(</span><span class="n">jhl</span><span class="o">.</span><span class="n">height</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/swift/2022/12/06/20221206.html" title="스위프트의 스트링">스위프트의 스트링</a><a class="next" href="/jekyll-theme-yat/swift/2022/12/08/20221208.html" title="스위프트의 컬렉션">스위프트의 컬렉션</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/swift/2022/12/12/20221212.html" title="스위프트의 컬렉션">스위프트의 세트</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/kotlin/2022/10/04/20221004.html" title="스위프트의 컬렉션">코틀린의 클래스</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/ds/2022/11/14/20221114.html" title="스위프트의 컬렉션">탐색</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/swift/2022/12/15/20221215.html" title="스위프트의 컬렉션">스위프트의 항목 순회</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2023 GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

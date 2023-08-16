@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>백준 - 트리 색칠하기(G5) | My Blog</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="백준 - 트리 색칠하기(G5)">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="2023/08/16(수요일)">
+<meta property="og:description" content="2023/08/16(수요일)">
+<meta property="og:site_name" content="My Blog">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-08-16T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="백준 - 트리 색칠하기(G5)">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2023-08-16T00:00:00+00:00","datePublished":"2023-08-16T00:00:00+00:00","description":"2023/08/16(수요일)","headline":"백준 - 트리 색칠하기(G5)","mainEntityOfPage":{"@type":"WebPage","@id":"/jekyll-theme-yat/algorithm/2023/08/16/20230816.html"},"url":"/jekyll-theme-yat/algorithm/2023/08/16/20230816.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/jekyll-theme-yat/feed.xml" title="My Blog">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="My Blog" src="" onerror="this.style.display='none'">
+  My Blog
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about.html">행복한 꿈을 꾸는 개발자</a><a class="page-link" href="/jekyll-theme-yat/archives.html">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories.html">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags.html">TAGS</a>
+
+
+
+
+
+
+
+
+
+<span class="page-link">
+
+
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  // Links to cross-origin destinations are unsafe
+  var gll = document.getElementsByClassName('goog-logo-link')[0];
+  if (gll) {
+    gll.setAttribute('rel', 'noopener');
+  }
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">백준 - 트리 색칠하기(G5)</h1>
+  <h2 class="post-subtitle">2023/08/16(수요일)</h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2023-08-16T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Aug 16, 2023
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 7 mins</span>
+  </p>
+<div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#algorithm">#algorithm</a></div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h1 id="20230816수요일">2023/08/16(수요일)</h1>
+
+<h2 id="백준-24230g5---트리-색칠하기">백준 24230(g5) - 트리 색칠하기</h2>
+
+<h3 id="문제">문제</h3>
+
+<p>정점이 N개인 트리가 있다. 정점에는 1부터 N까지 번호가 붙어있다. 트리의 루트는 항상 1번 정점이며 맨 처음에는 모든 정점이 하얀색으로 칠해져 있는 상태이다.</p>
+
+<p>하나의 정점에 색칠하면 해당 정점 아래 있는 모든 정점이 같은 색으로 칠해진다. 색은 섞이지 않고 색칠할 때마다 그 색으로 덮어진다. 단, 하얀색으로 색칠할 수는 없다.</p>
+
+<p>아래 그림처럼 정점 10개로 구성된 트리가 있다고 가정을 해보자.</p>
+
+<p><a href="https://upload.acmicpc.net/d60753e6-25d7-4baa-94c3-e99d84ed3d42/-/preview/">https://upload.acmicpc.net/d60753e6-25d7-4baa-94c3-e99d84ed3d42/-/preview/</a></p>
+
+<p>[그림 1] 하얀색으로 칠해져 있는 트리</p>
+
+<p>3번 정점을 노란색으로 칠하면 그 아래 있는 정점 5, 6, 8, 9, 10 모두 노란색으로 칠해진다.</p>
+
+<p><a href="https://upload.acmicpc.net/6345e2aa-2c8a-4f59-a274-e9073c61e520/-/preview/">https://upload.acmicpc.net/6345e2aa-2c8a-4f59-a274-e9073c61e520/-/preview/</a></p>
+
+<p>[그림 2] 정점 3에 노란색을 칠한 후 트리의 상태</p>
+
+<p>그리고 정점 5에 파란색을 칠한다면 그 아래 있는 정점 8, 9, 10 모두 파란색으로 칠해진다.</p>
+
+<p><a href="https://upload.acmicpc.net/25b335ab-1493-4ca6-a4a0-87486da7e39d/-/preview/">https://upload.acmicpc.net/25b335ab-1493-4ca6-a4a0-87486da7e39d/-/preview/</a></p>
+
+<p>[그림 3] 정점 5에 파란색을 칠한 후 트리의 상태</p>
+
+<p>입력으로 트리의 정보와 정점의 색 정보가 주어진다. 색 정보는 음이 아닌 정수로 주어지며 값이 0인 경우는 항상 하얀색을 의미한다.</p>
+
+<p>하얀색을 제외한 색만 사용해서 모든 정점을 주어진 색으로 칠하고 싶을 때 최소 몇 번 색을 칠해야 모든 정점을 원하는 색으로 칠할 수 있는지 구해보자.</p>
+
+<h3 id="1-내-첫-풀이">1. 내 첫 풀이</h3>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">java.io.BufferedReader</span>
+<span class="k">import</span> <span class="nn">java.io.InputStreamReader</span>
+<span class="k">import</span> <span class="nn">java.util.*</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;){</span>
+    <span class="kd">val</span> <span class="py">br</span> <span class="p">=</span> <span class="nc">BufferedReader</span><span class="p">(</span><span class="nc">InputStreamReader</span><span class="p">(</span><span class="nc">System</span><span class="p">.</span><span class="n">`in`</span><span class="p">))</span>
+    <span class="kd">val</span> <span class="py">n</span> <span class="p">=</span> <span class="n">br</span><span class="p">.</span><span class="nf">readLine</span><span class="p">().</span><span class="nf">toInt</span><span class="p">()</span>
+    <span class="kd">var</span> <span class="py">inputColorNode</span> <span class="p">=</span> <span class="n">br</span><span class="p">.</span><span class="nf">readLine</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="s">" "</span><span class="p">).</span><span class="nf">map</span><span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="nf">toInt</span><span class="p">()</span> <span class="p">}</span>
+    <span class="kd">var</span> <span class="py">graph</span> <span class="p">=</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">MutableList</span><span class="p">&lt;</span><span class="nc">Int</span><span class="p">&gt;&gt;(</span><span class="n">n</span><span class="p">){</span> <span class="nf">mutableListOf</span><span class="p">()</span> <span class="p">}</span>
+    <span class="kd">var</span> <span class="py">colorNode</span> <span class="p">=</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">Int</span><span class="p">&gt;(</span><span class="n">inputColorNode</span><span class="p">.</span><span class="n">size</span><span class="p">){</span> <span class="mi">0</span> <span class="p">}</span>
+    <span class="kd">var</span> <span class="py">count</span> <span class="p">=</span> <span class="mi">0</span>
+
+    <span class="nf">repeat</span><span class="p">(</span><span class="n">n</span> <span class="p">-</span> <span class="mi">1</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="p">(</span><span class="py">node1</span><span class="p">,</span> <span class="py">node2</span><span class="p">)</span> <span class="p">=</span> <span class="n">br</span><span class="p">.</span><span class="nf">readLine</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="s">" "</span><span class="p">).</span><span class="nf">map</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="nf">toInt</span><span class="p">()</span> <span class="p">}</span>
+        <span class="n">graph</span><span class="p">[</span><span class="n">node1</span> <span class="p">-</span> <span class="mi">1</span><span class="p">].</span><span class="nf">add</span><span class="p">(</span><span class="n">node2</span> <span class="p">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">graph</span><span class="p">[</span><span class="n">node2</span> <span class="p">-</span> <span class="mi">1</span><span class="p">].</span><span class="nf">add</span><span class="p">(</span><span class="n">node1</span> <span class="p">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="n">inputColorNode</span><span class="p">.</span><span class="n">indices</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">inputColorNode</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">!=</span> <span class="mi">0</span> <span class="p">&amp;&amp;</span> <span class="n">inputColorNode</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">!=</span> <span class="n">colorNode</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
+            <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">inputColorNode</span><span class="p">,</span> <span class="n">colorNode</span><span class="p">,</span> <span class="n">inputColorNode</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span><span class="p">)</span>
+            <span class="n">count</span><span class="p">++</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="nf">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">private</span> <span class="k">fun</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">MutableList</span><span class="p">&lt;</span><span class="nc">Int</span><span class="p">&gt;&gt;,</span> <span class="n">inputColorNode</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">Int</span><span class="p">&gt;,</span> <span class="n">colorNode</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">Int</span><span class="p">&gt;,</span> <span class="n">color</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nc">Int</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="py">q</span><span class="p">:</span> <span class="nc">Queue</span><span class="p">&lt;</span><span class="nc">Int</span><span class="p">&gt;</span> <span class="p">=</span> <span class="nc">LinkedList</span><span class="p">()</span>
+    <span class="kd">val</span> <span class="py">visited</span> <span class="p">=</span> <span class="nc">HashSet</span><span class="p">&lt;</span><span class="nc">Int</span><span class="p">&gt;()</span>
+
+    <span class="n">visited</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+    <span class="n">colorNode</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="p">=</span> <span class="n">color</span>
+    <span class="n">q</span><span class="p">.</span><span class="nf">offer</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="nf">isNotEmpty</span><span class="p">()){</span>
+        <span class="kd">var</span> <span class="py">preNode</span> <span class="p">=</span> <span class="n">q</span><span class="p">.</span><span class="nf">poll</span><span class="p">()</span>
+
+        <span class="n">graph</span><span class="p">[</span><span class="n">preNode</span><span class="p">].</span><span class="nf">forEach</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">it</span> <span class="p">!</span><span class="k">in</span> <span class="n">visited</span> <span class="p">&amp;&amp;</span> <span class="n">it</span> <span class="p">&gt;</span> <span class="n">preNode</span><span class="p">){</span>
+                <span class="n">q</span><span class="p">.</span><span class="nf">offer</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+                <span class="n">colorNode</span><span class="p">[</span><span class="n">it</span><span class="p">]</span> <span class="p">=</span> <span class="n">color</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>→ 주어진 그래프에서 자식의 값은 항상 부모의 값보다 클 것이라고 생각하였고 생각나는데로 코드를 끄적였다,,</p>
+
+<p>위 코드에서의 핵심은 colorNode라는 새로운 배열을 만들어 0으로 초기화를 해 주었으며 bfs를 돌 때마다 colorNode는 inputColorNode라는 주어진 색칠이 된 변수랑 똑같이 되어간다.</p>
+
+<p>다시말해</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//입력
+10
+0 0 1 0 2 1 0 2 2 2
+3 1
+1 4
+9 5
+10 5
+1 2
+3 6
+3 5
+5 8
+4 7
+</code></pre></div></div>
+
+<p>위의 값들이 입력으로 주어졌을 때</p>
+
+<p>colorNode는</p>
+
+<p>[0, 0, 0, 0, 0, 0, 0, 0, 0, 0] → [0, 0, 1, 0, 1, 1, 0, 1, 1, 1] → [0, 0, 1, 0, 2, 1, 0 ,2, 2, 2] 로 변한다.</p>
+
+<p>하지만 위의 방식은 시간초과를 생각하지 않은 방식으로 제출했을 때 시간초과가 났다….😓</p>
+
+<h3 id="2-두-번째-풀이">2. 두 번째 풀이</h3>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">java.io.BufferedReader</span>
+<span class="k">import</span> <span class="nn">java.io.InputStreamReader</span>
+<span class="k">import</span> <span class="nn">java.util.*</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;){</span>
+    <span class="kd">val</span> <span class="py">br</span> <span class="p">=</span> <span class="nc">BufferedReader</span><span class="p">(</span><span class="nc">InputStreamReader</span><span class="p">(</span><span class="nc">System</span><span class="p">.</span><span class="n">`in`</span><span class="p">))</span>
+    <span class="kd">val</span> <span class="py">n</span> <span class="p">=</span> <span class="n">br</span><span class="p">.</span><span class="nf">readLine</span><span class="p">().</span><span class="nf">toInt</span><span class="p">()</span>
+    <span class="kd">var</span> <span class="py">colorNode</span> <span class="p">=</span> <span class="n">br</span><span class="p">.</span><span class="nf">readLine</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="s">" "</span><span class="p">).</span><span class="nf">map</span><span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="nf">toInt</span><span class="p">()</span> <span class="p">}</span>
+    <span class="kd">var</span> <span class="py">graph</span> <span class="p">=</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">MutableList</span><span class="p">&lt;</span><span class="nc">Int</span><span class="p">&gt;&gt;(</span><span class="n">n</span><span class="p">){</span> <span class="nf">mutableListOf</span><span class="p">()</span> <span class="p">}</span>
+    <span class="kd">var</span> <span class="py">count</span> <span class="p">=</span> <span class="mi">0</span>
+
+    <span class="nf">repeat</span><span class="p">(</span><span class="n">n</span> <span class="p">-</span> <span class="mi">1</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="p">(</span><span class="py">node1</span><span class="p">,</span> <span class="py">node2</span><span class="p">)</span> <span class="p">=</span> <span class="n">br</span><span class="p">.</span><span class="nf">readLine</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="s">" "</span><span class="p">).</span><span class="nf">map</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="nf">toInt</span><span class="p">()</span> <span class="p">}</span>
+        <span class="n">graph</span><span class="p">[</span><span class="n">node1</span> <span class="p">-</span> <span class="mi">1</span><span class="p">].</span><span class="nf">add</span><span class="p">(</span><span class="n">node2</span> <span class="p">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">graph</span><span class="p">[</span><span class="n">node2</span> <span class="p">-</span> <span class="mi">1</span><span class="p">].</span><span class="nf">add</span><span class="p">(</span><span class="n">node1</span> <span class="p">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">colorNode</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">!=</span> <span class="mi">0</span><span class="p">){</span>
+        <span class="n">count</span><span class="p">++</span>
+    <span class="p">}</span>
+
+    <span class="nf">print</span><span class="p">(</span><span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">colorNode</span><span class="p">,</span> <span class="n">count</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="k">private</span> <span class="k">fun</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">MutableList</span><span class="p">&lt;</span><span class="nc">Int</span><span class="p">&gt;&gt;,</span> <span class="n">colorNode</span><span class="p">:</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">Int</span><span class="p">&gt;,</span> <span class="n">count</span><span class="p">:</span> <span class="nc">Int</span><span class="p">):</span> <span class="nc">Int</span><span class="p">{</span>
+    <span class="kd">var</span> <span class="py">q</span><span class="p">:</span> <span class="nc">Queue</span><span class="p">&lt;</span><span class="nc">Int</span><span class="p">&gt;</span> <span class="p">=</span> <span class="nc">LinkedList</span><span class="p">()</span>
+    <span class="kd">val</span> <span class="py">visited</span> <span class="p">=</span> <span class="nc">HashSet</span><span class="p">&lt;</span><span class="nc">Int</span><span class="p">&gt;()</span>
+    <span class="kd">var</span> <span class="py">cnt</span> <span class="p">=</span> <span class="n">count</span>
+
+    <span class="n">visited</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">q</span><span class="p">.</span><span class="nf">offer</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="nf">isNotEmpty</span><span class="p">()){</span>
+        <span class="kd">var</span> <span class="py">node</span> <span class="p">=</span> <span class="n">q</span><span class="p">.</span><span class="nf">poll</span><span class="p">()</span>
+
+        <span class="n">graph</span><span class="p">[</span><span class="n">node</span><span class="p">].</span><span class="nf">forEach</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">it</span> <span class="p">!</span><span class="k">in</span> <span class="n">visited</span><span class="p">){</span>
+                <span class="n">q</span><span class="p">.</span><span class="nf">offer</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+                <span class="n">visited</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+
+                <span class="k">if</span><span class="p">(</span><span class="n">colorNode</span><span class="p">[</span><span class="n">it</span><span class="p">]</span> <span class="p">!=</span> <span class="n">colorNode</span><span class="p">[</span><span class="n">node</span><span class="p">]){</span>
+                    <span class="n">cnt</span><span class="p">++</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">cnt</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>→ 두 번째 풀이의 핵심은 부모노드와 자식노드의 색깔 차이이다.
+즉, 부모노드와 자식 노드의 색깔이 다르면 무조건 색을 칠해야만 한다는 뜻이고 색깔 차이가 났을 때마다 count를 하나씩 더해주면 된다.</p>
+
+<p>여기서 유의할 점이 있는데, 위의 알고리즘은 첫 시작노드를 검사하지 않는다. 그렇기 때문에</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="n">colorNode</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">!=</span> <span class="mi">0</span><span class="p">){</span>
+        <span class="n">count</span><span class="p">++</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>의 코드를 통하여 루트노드가 0이 아닐시 count를 하나 더하여 bfs를 실행해주면 된다.</p>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/swift/2022/12/15/20221215_all.html" title="스위프트의 중간 기록(이제까지 공부한 내용들)">스위프트의 중간 기록(이제까지 공부한 내용들)</a><span></span>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/todo/2022/09/12/20220912.html" title="">2022-09-12(월요일)</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/ds/2022/11/14/20221114.html" title="">탐색</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/kotlin/2022/10/04/20221004.html" title="">코틀린의 클래스</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/ds/2022/10/25/20221025.html" title="">기수 정렬</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2023 GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

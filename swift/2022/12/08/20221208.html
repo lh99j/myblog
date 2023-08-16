@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>스위프트의 컬렉션 | My Blog</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="스위프트의 컬렉션">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="[스위프트]">
+<meta property="og:description" content="[스위프트]">
+<meta property="og:site_name" content="My Blog">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-12-08T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="스위프트의 컬렉션">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"GitHub User"},"dateModified":"2022-12-08T00:00:00+00:00","datePublished":"2022-12-08T00:00:00+00:00","description":"[스위프트]","headline":"스위프트의 컬렉션","mainEntityOfPage":{"@type":"WebPage","@id":"/jekyll-theme-yat/swift/2022/12/08/20221208.html"},"url":"/jekyll-theme-yat/swift/2022/12/08/20221208.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/jekyll-theme-yat/feed.xml" title="My Blog">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header " role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="My Blog" src="" onerror="this.style.display='none'">
+  My Blog
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about.html">행복한 꿈을 꾸는 개발자</a><a class="page-link" href="/jekyll-theme-yat/archives.html">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories.html">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags.html">TAGS</a>
+
+
+
+
+
+
+
+
+
+<span class="page-link">
+
+
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  // Links to cross-origin destinations are unsafe
+  var gll = document.getElementsByClassName('goog-logo-link')[0];
+  if (gll) {
+    gll.setAttribute('rel', 'noopener');
+  }
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="post">
+  <section>
+
+
+
+
+
+
+
+
+
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">스위프트의 컬렉션</h1>
+  <h2 class="post-subtitle">2022/12/08(목요일)</h2>
+
+  <p class="post-meta">
+    <time class="dt-published" datetime="2022-12-08T00:00:00+00:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Dec 08, 2022
+    </time>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 7 mins</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Switft">#Switft</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h2 id="스위프트">[스위프트]</h2>
+
+<h2 id="44-컬렉션형">4.4 컬렉션형</h2>
+
+<p>스위프트는 튜플 이외에도 많은 수의 데이터를 묶어서 저장하고 관리할 수 있는 컬렉션 타입을 제공한다. 컬렉션 타입에는 <strong>배열(Array),</strong> <strong>딕셔너리(Dictionary)</strong>, <strong>세트(Set)</strong>등이 있다.</p>
+
+<h3 id="441-배열">4.4.1 배열</h3>
+
+<p>배열은 같은 타입의 데이터를 일렬로 나열한 후 순서대로 저장하는 형태의 컬렉션 타입이다. 각기 다른 위치에 같은 값이 들어갈 수도 있다.</p>
+
+<p>배열 타입을 선언해줄 방법은 다양하다. <strong>let 키워드를</strong> 사용해 상수로 선언하면 변경할 수 없는 배열이 되고, <strong>var 키워드</strong>를 사용해 변수로 선언해주면 변경 가능한 배열이 된다. 실제로 배열을 사용할 때는 Array라는 키워드의 타입 이름의 조합으로 사용한다. 또, 대괄호로 값을 묶어 Array 타입임을 표현할 수도 있다. 빈 배열은 이니셜라이저 또는 리터럴 문법을 통해 생성해줄 수 있는데 <strong>isEmpty</strong> 프로퍼티로 비어있는 배열인지 확인해 볼 수 있다. 그리고 배열에 몇 개의 요소가 존재하는지 알고 싶으면 <strong>count</strong> 프로퍼티를 확인하면 된다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 대괄호를 사용하여 배열임을 표현한다.</span>
+<span class="k">var</span> <span class="nv">names</span><span class="p">:</span> <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[</span><span class="s">"lhj"</span><span class="p">,</span> <span class="s">"hyungjun"</span><span class="p">,</span> <span class="s">"limhj"</span><span class="p">,</span> <span class="s">"lhyungj"</span><span class="p">]</span>
+
+<span class="c1">// 위 선언고 ㅏ정확히 동일한 표현이다. [String]은 Array&lt;String&gt;의 축약 표현이다.</span>
+<span class="k">var</span> <span class="nv">names</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"lhj"</span><span class="p">,</span> <span class="s">"hyungjun"</span><span class="p">,</span> <span class="s">"limhj"</span><span class="p">,</span> <span class="s">"lhyungj"</span><span class="p">]</span>
+
+<span class="k">var</span> <span class="nv">emptyArray</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]()</span>       <span class="c1">// Any 데이터를 요소로 갖는 빈 배열을 생성한다.</span>
+<span class="k">var</span> <span class="nv">emptyArray</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">Any</span><span class="o">&gt;</span><span class="p">()</span>  <span class="c1">// 위 선언과 정확히 같은 동작을 하는 코드이다.</span>
+
+<span class="c1">// 배열의 타입을 정확히 명시해줬다면 [ ]만으로도 빈 배열을 생성할 수 있다.</span>
+<span class="k">var</span> <span class="nv">emptyArray</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">emptyArray</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">)</span>    <span class="c1">// true</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>            <span class="c1">// 4</span>
+</code></pre></div></div>
+
+<p>배열은 각 요소에 인덱스를 통해 접근할 수 있다. 인덱스는 0부터 시작한다. 잘못된 인덱스로 접근하려고 하면 <strong>인셉션 오류(Exception Error)</strong>가 발생한다. 또, 맨 처음과 맨 마지막 요소는 <strong>fist</strong>와 <strong>last</strong> 프로퍼티를 통해 가져올 수 있다. <strong>firstIndex(of:)</strong> 메서드를 사용하면 해당 요소의 인덱스를 알아낼 수도 있다. 만약 중복된 요소가 있다면 제일 먼저 발견된 요소의 인덱스를 반환한다. 맨 뒤에 요소를 추가하고 싶다면 <strong>append(_:)</strong> 메서드를 사용한다.</p>
+
+<p>중간에 요소를 삽입하고 싶다면 <strong>insert(<em>:at:)** 메서드를 사용하면 된다.</em> 요소를 삭제하고 싶다면 **remove(_:)</strong> 메서드를 사용하게 되는데, 메서드를 사용하면 해당 요소가 삭제된 후 반환된다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>                <span class="c1">// hyungjun</span>
+<span class="n">names</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s">"limhyungjun"</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>               <span class="c1">// limhyungjun</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>               <span class="c1">// 인덱스의 범위를 벗어났기 때문에 오류가 발생한다.</span>
+
+<span class="n">names</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s">"hyungjun"</span>         <span class="c1">// 인덱스의 범위를 벗어났기 때문에 오류가 발생한다.</span>
+<span class="n">names</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="s">"hyungjun"</span><span class="p">)</span>      <span class="c1">// 맨 마지막 hyungjun이 추가된다.</span>
+<span class="n">names</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="p">[</span><span class="s">"hj"</span><span class="p">,</span> <span class="s">"lh"</span><span class="p">]</span> <span class="c1">// 맨 마지막에 hj, lh가 추가된다.</span>
+<span class="n">names</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="s">"jhl"</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>    <span class="c1">// 인덱스 2에 삽입된다.</span>
+<span class="c1">// 인덱스 5의 위치에 abc, cba가 삽입된다.</span>
+<span class="n">names</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="p">[</span><span class="s">"abc"</span><span class="p">,</span> <span class="s">"cba"</span><span class="p">],</span> <span class="nv">at</span><span class="p">:</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>                     <span class="c1">// lhyungj</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">names</span><span class="o">.</span><span class="nf">firstIndex</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="s">"lhj"</span><span class="p">))</span>  <span class="c1">// 0</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">names</span><span class="o">.</span><span class="nf">firstIndex</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="s">"baob"</span><span class="p">))</span> <span class="c1">// nil</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">names</span><span class="o">.</span><span class="n">first</span><span class="p">)</span>                  <span class="c1">// lhj</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">names</span><span class="o">.</span><span class="n">last</span><span class="p">)</span>                   <span class="c1">// lh</span>
+
+<span class="k">let</span> <span class="nv">firstItem</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">removeFirst</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">lastItem</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">removeLast</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">iundexZeroItem</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">firstItem</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">lastItem</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">indexZeroItem</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="mi">1</span> <span class="o">...</span> <span class="mi">3</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>위 코드에서 맨 아래 줄의 <code class="language-plaintext highlighter-rouge">names[1 … 3]</code> 표현은 범위 연산자를 사용하여 names 배열의 일부만 가져온 것이다. 코드처럼 읽기만 가능한 것이 아니라 <code class="language-plaintext highlighter-rouge">names[1 … 3] = [”A”, “B”, “C”]</code>와 같이 범위에 맞게 요소를 바꾸는 것도 가능하다.</p>
+
+<p>스위프트의 배열을 비롯한 컬렉션 타입을 활용할 때 서브스크립트(Subscript) 기능을 많이 사용한다.</p>
+
+<h3 id="442-딕셔너리">4.4.2 딕셔너리</h3>
+
+<p>딕셔너리는 요소들이 순서 없이 키와 값의 쌍으로 구성되는 컬렉션 타입이다. 딕셔너리에 저장되는 값은 항상 키와 쌍을 이루게 되는데, 딕셔너리 앞에는 키가 하나이거나 여러 개일 수 있다. 단, 하나의 딕셔너리 안의 키는 같은 이름을 중복해서 사용할 수 없다. 쉽게 말해서 아래의 코드에서 “lhj”라는 키가 두 번 쓰일 수 없다는 뜻이다. 즉, 딕셔너리에서 키는 값을 대변하는 유일한 식별자가 되는 것이다.</p>
+
+<p>딕셔너리는 Dictionary라는 키워드와 키의 타입과 값의 타입 이름의 조합으로 써준다. 대관호로 키와 값의 타입 이름의 쌍을 묶어 딕셔너리 타입임을 표현한다. let 키워드를 사용하여 상수로 선언하면 변경 불가능한 딕셔너리가 되고, var 키워드를 사용하여 변수로 선언해주면 변경 가능한 딕셔너리가 된다. 빈 딕셔너리는 이니셜라이저 도는 리터럴 문법을 통해 생성할 수 있다. isEmpty 프로퍼티를 통해 비어있는 딕셔너리인지 확인할 수 있다. 그리고 count 프로퍼티로 딕셔너리의 요소 개수를 확인할 수 있다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// typealias를 통해 조금 더 단순하게 표현해 볼 수 있다.</span>
+<span class="kd">typealias</span> <span class="kt">StringIntDictionary</span> <span class="o">=</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Int</span><span class="p">]</span>
+
+<span class="c1">// 키는 String, 값은 Int 타입인 빈 딕셔너리를 생성한다.</span>
+<span class="k">var</span> <span class="nv">numberForName</span><span class="p">:</span> <span class="kt">Dictionary</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt">Int</span><span class="o">&gt;</span> <span class="o">=</span> <span class="kt">Dictionary</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt">Int</span><span class="o">&gt;</span><span class="p">()</span>
+
+<span class="c1">// 위 선언과 같은 표현이다. [String: Int]는 Dictionary&lt;String, Int&gt;의 축약 표현이다.</span>
+<span class="k">var</span> <span class="nv">numberForName</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">,</span> <span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Int</span><span class="p">]()</span>
+
+<span class="c1">// 위 코드와 같은 동작을 한다.</span>
+<span class="k">var</span> <span class="nv">numberForName</span><span class="p">:</span> <span class="kt">StringIntDictionary</span> <span class="o">=</span> <span class="kt">StringIntDictionary</span><span class="p">()</span>
+
+<span class="c1">// 딕셔너리와 키와 값 타입을 정확히 명시해줬다면 [:]만으로도 빈 딕셔너리를 생성할 수 있다.</span>
+<span class="k">var</span> <span class="nv">numberForName</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">,</span> <span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:]</span>
+
+<span class="c1">// 초기값을 주어 생성해줄 수도 있다.</span>
+<span class="k">var</span> <span class="nv">numberForName</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"lhj"</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span> <span class="s">"babo"</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s">"bab"</span><span class="p">:</span> <span class="mi">300</span><span class="p">]</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">numberForName</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">)</span>  <span class="c1">// false</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">numberForName</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>    <span class="c1">// 3</span>
+
+</code></pre></div></div>
+
+<p>딕셔너리는 각 값에 키로 접근할 수 있다. 딕셔너리 내부에서 키는 유일해야 하며, 값은 유일하지 않다. 딕셔너리는 배열과 다르게 딕셔너리 내부에 없는 키로 접근해도 오류가 발생하지 않는다. 다만 nil을 반환할 뿐이다. 특정 키에 해당하는 값을  제거하려면 removeValue(forKey: ) 메서드를 사용한다. 키에 해당하는 값이 제거된 후 반환된다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">numberForName</span><span class="p">[</span><span class="s">"babo"</span><span class="p">])</span>     <span class="c1">// 100</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">numberForName</span><span class="p">[</span><span class="s">"hyungjun"</span><span class="p">])</span> <span class="c1">// nil</span>
+
+<span class="n">numberForName</span><span class="p">[</span><span class="s">"babo"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">150</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">numberForName</span><span class="o">.</span><span class="p">[</span><span class="s">"babo"</span><span class="p">])</span>    <span class="c1">// 150</span>
+
+<span class="n">numberForName</span><span class="p">[</span><span class="s">"max"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">999</span>       <span class="c1">// max라는 키로 999라는 값은 추가한다.</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">numberForName</span><span class="o">.</span><span class="p">[</span><span class="s">"max"</span><span class="p">])</span>     <span class="c1">// 999</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">numberForName</span><span class="o">.</span><span class="nf">removeValue</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"lhj"</span><span class="p">))</span> <span class="c1">// 24</span>
+
+<span class="c1">// 위에서 lhj 키에 해당하는 값이 이미 삭제되었으므로 nil이 반환된다.</span>
+<span class="c1">// 키에 해당하는 값이 없으면 기본값을 돌려주도록 할 수 있다.</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">numberForName</span><span class="o">.</span><span class="nf">removeValue</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"lhj"</span><span class="p">))</span>
+
+<span class="c1">// lhj 키에 해당하는 값이 없으면 기본으로 0이 반환된다.</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">numberForName</span><span class="p">[</span><span class="s">"lhj"</span><span class="p">,</span> <span class="k">default</span><span class="p">:</span> <span class="mi">0</span><span class="p">])</span> <span class="c1">// 0</span>
+</code></pre></div></div>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/jekyll-theme-yat/swift/2022/12/07/20221207.html" title="스위프트의 데이터 타입">스위프트의 데이터 타입</a><a class="next" href="/jekyll-theme-yat/algorithm/2022/12/09/20221209.html" title="알고리즘 - 크레인 인형 뽑기(level 1)">알고리즘 - 크레인 인형 뽑기(level 1)...</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/jekyll-theme-yat/algorithm/2022/10/07/20221007.html" title="알고리즘 - 크레인 인형 뽑기(level 1)">신규 아이디 추천(알고리즘)</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/ds/2022/11/16/20221116.html" title="알고리즘 - 크레인 인형 뽑기(level 1)">색인 순차 탐색, 보간 탐색</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/todo/2022/09/14/20220914.html" title="알고리즘 - 크레인 인형 뽑기(level 1)">2022-09-14(수요일)</a></li>
+<li><a class="post-link" href="/jekyll-theme-yat/todo/2022/10/10/20221010.html" title="알고리즘 - 크레인 인형 뽑기(level 1)">2022/10/10(월요일)</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
+
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
+</div>
+
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2023 GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

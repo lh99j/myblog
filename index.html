@@ -1,0 +1,8314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Home | My Blog</title>
+<meta name="generator" content="Jekyll v4.3.2">
+<meta property="og:title" content="Home">
+<meta name="author" content="GitHub User">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+<meta property="og:site_name" content="My Blog">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Home">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"GitHub User"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"Home","name":"My Blog","url":"/jekyll-theme-yat/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/jekyll-theme-yat/assets/css/main.css">
+  <script src="/jekyll-theme-yat/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="/jekyll-theme-yat/feed.xml" title="My Blog">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header site-header-transparent" role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner" rel="author" href="/jekyll-theme-yat/">
+  <img class="site-favicon" title="My Blog" src="" onerror="this.style.display='none'">
+  My Blog
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/jekyll-theme-yat/about.html">행복한 꿈을 꾸는 개발자</a><a class="page-link" href="/jekyll-theme-yat/archives.html">ARCHIVES</a><a class="page-link" href="/jekyll-theme-yat/categories.html">CATEGORIES</a><a class="page-link" href="/jekyll-theme-yat/">HOME</a><a class="page-link" href="/jekyll-theme-yat/tags.html">TAGS</a>
+
+
+
+
+
+
+
+
+
+<span class="page-link">
+
+
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  // Links to cross-origin destinations are unsafe
+  var gll = document.getElementsByClassName('goog-logo-link')[0];
+  if (gll) {
+    gll.setAttribute('rel', 'noopener');
+  }
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  function initHeader() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;documentElement.setAttribute("data-header-transparent", "");var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  }
+  document.addEventListener('DOMContentLoaded', initHeader);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="page-banner">
+    <div class="page-banner-img">
+<div style="background-image: url(/jekyll-theme-yat/assets/images/banners/title.jpg)"></div>
+        <img class="img-placeholder" src="/jekyll-theme-yat/assets/images/banners/title.jpg">
+</div>
+    <div class="wrapper">
+      <div class="page-banner-inner"><div class="page-banner-default">
+            <h1 class="page-banner-heading">
+              행복한 꿈을 꾸는 개발자
+            </h1>
+            <h2 class="page-banner-subheading">
+              임형준
+            </h2>
+          </div></div>
+    </div>
+  </section><script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<div id="click-to-top" class="click-to-top">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<script>
+  (function () {
+    const clickToTop = document.getElementById('click-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        clickToTop.classList.add('show')
+      }else {
+        clickToTop.classList.remove('show')
+      }
+    });
+    clickToTop.addEventListener('click', () => {
+      window.smoothScrollTo(0);
+    });
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="framework">
+  <section class="main">
+
+     <div class="articles">
+  
+
+  
+
+
+  <div class="pagination">
+  <!-- Post list links -->
+  <ul class="post-list">
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/algorithm/2023/08/16/20230816.html">
+          백준 - 트리 색칠하기(G5)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Aug 16, 2023</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 7 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/algorithm/2023/08/16/20230816.html">
+        <p>
+        2023/08/16(수요일)
+
+백준 24230(g5) - 트리 색칠하기
+
+문제
+
+정점이 N개인 트리가 있다. 정점에는 1부터 N까지 번호가 붙어있다. 트리의 루트는 항상 1번 정점이며 맨 처음에는 모든 정점이 하얀색으로 칠해져 있는 상태이다.
+
+하나의 정점에 색칠하면 해당 정점 아래 있는 모든 정점이 같은 색으로 칠해진다. 색은 섞이지 않고 색칠할 때마다 그 색으로 덮어진다. 단, 하얀색으로 색칠할 수는 없다.
+
+아래 그림처럼 정점 10개로 구성된 트리가 있다고 가정을 해보자.
+
+https://upload.acmicpc.net/d60753e6-25d7-4baa-94c3-e99d84ed3d42/-/preview/
+
+... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#algorithm">#algorithm</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/swift/2022/12/15/20221215_all.html">
+          스위프트의 중간 기록(이제까지 공부한 내용들)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 15, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 43 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/swift/2022/12/15/20221215_all.html">
+        <p>
+        스위프트
+
+애플은 iOS, macOS,warchOS, ivOS 등 자사의 제품 개발에 활용하고자 새 프로그래밍 언어인 스위프트를 만들었다. 스위프트는 안전을 우선으로 하는 프로그래밍 패턴을 지향하며, 더욱 쉽고 재미있게 프로그래밍할 수 있도록 옵셔널, 제네릭, 프로토콜, 튜플, 익스텐션 등 새로운 기능을 많이 도입했다. 현재 애플은 스위프트를 오픈소스로 공유했으므로 애플 플랫폼 외에 다양한 플랫폼에서 사용할 수 있다.
+
+스위프트는 편리하며 고차원적인 언어이다. 먼저 ARC(자동 참조 횟수 계산)을 지원하므로 쉽게 메모리를 관리할 수 있다. 또한 기존 Objective-c  언어에 익숙하다면 더욱 쉽게 스위프트를 익... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#AllSwift">#AllSwift</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Switft">#Switft</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/swift/2022/12/15/20221215.html">
+          스위프트의 항목 순회
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 15, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/swift/2022/12/15/20221215.html">
+        <p>
+        [스위프트]
+
+4.5.4 항목 순회
+
+우리는 때때로 열거형에 포함된 모든 케이스를 알아야 할 때가 있습니다. 그럴 때 열거형의 이름 뒤에 콜론(;)을 작성하고 한 칸 띄운 뒤 CaseIterable 프로토콜을 채택해주세요. 그러면 열거형 allCases라는 이름의 타입 프로퍼티를 통해 모든 케이스의 컬렌션을 생성해준다
+
+enum School: CaseIterable{
+	case primary
+	case elementary
+	case middle
+	case high
+	case college
+	case university
+	case graduate
+}
+
+let allCases: [School] = School.allC... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Switft">#Switft</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/swift/2022/12/14/20221214.html">
+          스위프트의 원시값, 연관값
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 14, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/swift/2022/12/14/20221214.html">
+        <p>
+        [스위프트]
+
+4.5.2 원시 값
+
+열거형의 각 항목은 자체로도 하나의 값이지만 항목의 원시 값도 가질 수 있다. 즉, 특정 타입으로 지정된 값을 가질 수 있다는 뜻이다. 특정 타입의 값을 원시 값으로 가지고 싶다면 열거형 이름 오른쪽에 타입을 명시해주면 된다. 또, 원시 값을 사용하고 싶다면 rawValue라는 프로퍼티를 통해 가져올 수 있다.
+
+enum School: String{
+	case primary = "유치원"
+	case elemenatary = "초등학교"
+	case middle = "중학교"
+	case high = "고등학교"
+	case college = "대학"
+	case university = ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Switft">#Switft</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/swift/2022/12/13/20221213.html">
+          스위프트의 열거형
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 13, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/swift/2022/12/13/20221213.html">
+        <p>
+        [스위프트]
+
+4.5 열거형
+
+열거형은 연관된 항목들을 묶어서 표현할 수 있는 타입이다. 열거형은 배열이나 딕셔너리 같은 타입과 다르게 프로그래머가 정희해준 항목 값 외에는 추가/수정이 불가능하다. 그렇기 때문에 딱 정해진 값만 열거형 값에 속할 수 있다.
+
+열거형은 다음과 같은 경우에 요긴하게 사용할 수 있다.
+
+
+  제한된 선택지를 주고 싶을 때
+  정해진 값 외에는 입력받고 싶지 않을 때
+  예상된 입력 값이 한정되어 있을 때
+
+
+열겨형으로 묶을 수 있는 항목들은 주변 생활에서 많이 찾아 볼 수 있다.
+
+
+  무선통신 방식 : WiFi, 블루투스, LTE, 3G, 기타
+  학생 : 초등학생, 중학생, 고등학생... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Switft">#Switft</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/swift/2022/12/12/20221212.html">
+          스위프트의 세트
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 12, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/swift/2022/12/12/20221212.html">
+        <p>
+        [스위프트]
+
+4.4.3 세트
+
+세트는 같은 타입의 데이터를 순서 없이 하나의 묶음으로 저장하는 형태의 컬렉션 타입이다. 세트 내의 값은 모두 유일한 값, 즉 중복된 값이 존재하지 않는다. 그래서 세트는 보통 순서가 중요하지 않거나 각 요소가 유일한 값이어야 하는 경우 에 사용한다. 또, 세트의 요소로는 해시 가능한 값이 들어와야 한다.
+
+세트는 Set 키워드와 타입 이름의 조합으로 써준다. 또, 배열과 마찬가지로 대괄호로 값들을 묶어 세트 타입임을 표현한다. 배열과 달리 표현할 수 있는 축약형(예를 들어 Array를 [Int]로 축약해 쓸 수 있던)이 없다. let 키워드를 사용하여  상수로 선언하면 변경 불가능... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Switft">#Switft</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/algorithm/2022/12/09/20221209.html">
+          알고리즘 - 크레인 인형 뽑기(level 1)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 09, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/algorithm/2022/12/09/20221209.html">
+        <p>
+        2022-12-09(금요일)
+
+프로그래머스 - 크레인 인형 뽑기(level 1)
+
+url : https://school.programmers.co.kr/learn/courses/30/lessons/64061
+
+문제 설명
+
+게임개발자인 “죠르디”는 크레인 인형뽑기 기계를 모바일 게임으로 만들려고 합니다.”죠르디”는 게임의 재미를 높이기 위해 화면 구성과 규칙을 다음과 같이 게임 로직에 반영하려고 합니다.
+
+
+
+게임 화면은 “1 x 1” 크기의 칸들로 이루어진 “N x N” 크기의 정사각 격자이며 위쪽에는 크레인이 있고 오른쪽에는 바구니가 있습니다. (위 그림은 “5 x 5” 크기의 예시입니다). 각 격자 칸에는 다양... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#algorithm">#algorithm</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/swift/2022/12/08/20221208.html">
+          스위프트의 컬렉션
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 08, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 7 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/swift/2022/12/08/20221208.html">
+        <p>
+        [스위프트]
+
+4.4 컬렉션형
+
+스위프트는 튜플 이외에도 많은 수의 데이터를 묶어서 저장하고 관리할 수 있는 컬렉션 타입을 제공한다. 컬렉션 타입에는 배열(Array), 딕셔너리(Dictionary), 세트(Set)등이 있다.
+
+4.4.1 배열
+
+배열은 같은 타입의 데이터를 일렬로 나열한 후 순서대로 저장하는 형태의 컬렉션 타입이다. 각기 다른 위치에 같은 값이 들어갈 수도 있다.
+
+배열 타입을 선언해줄 방법은 다양하다. let 키워드를 사용해 상수로 선언하면 변경할 수 없는 배열이 되고, var 키워드를 사용해 변수로 선언해주면 변경 가능한 배열이 된다. 실제로 배열을 사용할 때는 Array라는 키워드의 타입 이... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Switft">#Switft</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/swift/2022/12/07/20221207.html">
+          스위프트의 데이터 타입
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 07, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/swift/2022/12/07/20221207.html">
+        <p>
+        [스위프트]
+
+4.1 데이터 타입 안심
+
+애플이 처음 스위프트를 발표할 때 강조했던 스위프트의 특징 중 안정성(safe)이 가장 뚜렷하게 나타나는 부분이다. 스위프트는 타이벵 굉장히 민감하고 엄격하다. 서로 다른 타입끼리의 데이터 교환은 꼭 타입캐스팅을 거쳐야 한다. 스위프트에서 값 타입의 데이터 교환은 엄밀히 말하면 타입캐스팅이 아닌 새로운 인스턴스를 생성하여 할당하는 것이다.
+
+4.1.1 데이터 타입 안심이란?
+
+스위프트는 데이터 타입을 안심하고 사용할 수 있는(Type-safe)언어이다. 타입을 안심하고 사용할 수 있다는 말은 그만큼 실수를 줄일 수 있다는 의미이다. 예를 들어 Int 타입 변수에 할당하려는 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Switft">#Switft</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/swift/2022/12/06/20221206.html">
+          스위프트의 스트링
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 06, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/swift/2022/12/06/20221206.html">
+        <p>
+        [스위프트]
+
+3.5 String
+
+String은 문자의 나열, 즉 문자열이다. String은 Character와 마찬가지로 유니코드 9를 사용할 수 있으며, 값의 앞뒤에 큰따옴표를 사용하여 표현한다.
+
+// 상수 선언된 문자열은 변경이 불가능하다.
+let name: String = "lhj"
+
+// 이니셜라이저를 사용하여 빈 문자열을 생성할 수 있다.
+// var 키워드를 사용하여 변수를 생성했으므로 문자열의 수정 및 변경이 가능하다.
+var introduce: String = String()
+
+// append() 매서드를 사용하여 문자열을 이어붙일 수 있다.
+introduce.append("제 이름은")
+
+/... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Switft">#Switft</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/swift/2022/12/05/20221205.html">
+          스위프트의 변수와 상수
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 05, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/swift/2022/12/05/20221205.html">
+        <p>
+        [스위프트]
+
+2.4 스위프트 변수와 상수
+
+우리는 변수나 상수를 이용해 프로그램에서 사용되는 데이터를 메모리에 임시로 저장한다. 이때 변수와 상수는 특정 데이터 타입에 해당하는 값의 이름이다. 변수는 생성 후 데이터값을 변경할 수 있지만, 상수는 한번 값을 설정하면 다음에 변경할 수 없다.
+
+2.4.1 변수
+
+스위프트에서 변수를 생성하려면 var 키워드를 사용해야 한다. var [변수명]: [데이터 타입] = [값]의 형태로 선얺나다. 변수를 생성할 때 데이터 타입은 생략할 수 있다.
+
+var name: String = "lhj"
+var age: Int = 24
+var job = "IOS Programmer" /... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Switft">#Switft</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/algorithm/2022/12/02/20221202.html">
+          체육복(알고리즘)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 02, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/algorithm/2022/12/02/20221202.html">
+        <p>
+        체육복 - 프로그래머스(level 1)
+
+문제 설명
+
+점심시간에 도둑이 들어, 일부 학생이 체육복을 도난당했습니다. 다행히 여벌 체육복이 있는 학생이 이들에게 체육복을 빌려주려 합니다. 학생들의 번호는 체격 순으로 매겨져 있어, 바로 앞번호의 학생이나 바로 뒷번호의 학생에게만 체육복을 빌려줄 수 있습니다. 예를 들어, 4번 학생은 3번 학생이나 5번 학생에게만 체육복을 빌려줄 수 있습니다. 체육복이 없으면 수업을 들을 수 없기 때문에 체육복을 적절히 빌려 최대한 많은 학생이 체육수업을 들어야 합니다.
+
+전체 학생의 수 n, 체육복을 도난당한 학생들의 번호가 담긴 배열 lost, 여벌의 체육복을 가져온 학생들의 번호... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#algorithm">#algorithm</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/swift/2022/12/01/20221201.html">
+          스위프트의 기초
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 01, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/swift/2022/12/01/20221201.html">
+        <p>
+        [스위프트]
+
+1. 스위프트 기본 명명 규칙
+
+모든 프로그래밍 언어가 그렇듯 프위프트 언어 자체에 명시도니 명명 규칙은 없다. 명명 규칙은 프레임워크나 코딩 환경 또는 협업 그룹마다 달라질 수 있다. 물론 언어에 따라서 권장하는 명명법이나 코딩 규칙이 있기도 하다.
+
+코딩은 습관이라 나중에 교정하기 어려우니 처음부터 제대로 된 코딩 규칙 및 명명 규칙을 익히도록 노력하는 것이 좋다. 다음은 가이드라인 중에서 꼭 알아야 할 기본 명명 규칙이다.
+
+
+  변수, 상수, 함수, 메서드, 타입 등의 이름은 유니코드에서 지원하는 어떤 문자(한글, 한자, 영문, 숫자, 이모티콘 등등)라도 사용할 수 있다. 다만 다음과 같은 예... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Switft">#Switft</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/swift/2022/11/30/20221130.html">
+          스위프트란?
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 30, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/swift/2022/11/30/20221130.html">
+        <p>
+        스위프트
+
+애플은 iOS, macOS,warchOS, ivOS 등 자사의 제품 개발에 활용하고자 새 프로그래밍 언어인 스위프트를 만들었다. 스위프트는 안전을 우선으로 하는 프로그래밍 패턴을 지향하며, 더욱 쉽고 재미있게 프로그래밍할 수 있도록 옵셔널, 제네릭, 프로토콜, 튜플, 익스텐션 등 새로운 기능을 많이 도입했다. 현재 애플은 스위프트를 오픈소스로 공유했으므로 애플 플랫폼 외에 다양한 플랫폼에서 사용할 수 있다.
+
+스위프트는 편리하며 고차원적인 언어이다. 먼저 ARC(자동 참조 횟수 계산)을 지원하므로 쉽게 메모리를 관리할 수 있다. 또한 기존 Objective-c  언어에 익숙하다면 더욱 쉽게 스위프트를 익... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Switft">#Switft</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/11/29/20221129.html">
+          해싱 (2)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 29, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/11/29/20221129.html">
+        <p>
+        해시 테이블의 구조
+
+
+
+해시테이블 ht는 M개의 버킷으로 이루어지는 테이블로서 ht[0], ht[1], … , ht[M - 1]의 원소를 가진다. 위 그림에서 보이듯이 하나의 버킷은 s개의 슬롯(slot)을 가질 수 있으며, 하나의 슬롯에는 하나의 항목이 저장된다. 하나의 버킷에 여러 개의 슬롯을 두는 이유는 서로 다른 두 개의 키가, 해시함수에 의해 동일한 해시 주소로 변환될 수 있으므로 여러 개의 항목을 동일한 버킷에 저장하기 위함이다. 그러나 대부분의 경우 하나의 버킷은 하나의 슬롯을 가진다.
+
+해시 테이블에 존재하는 버킷의 수가 M이므로 해시함수 h는 모든 키에 대하여 0≤h(x)≤M-1의 범위의 값을 제... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/11/28/20221128.html">
+          해싱 (1)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 28, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/11/28/20221128.html">
+        <p>
+        해싱
+
+지금까지 배운 우리가 학습한 선형 탐색이나 이진 탐색은 모두 키를 저장된 키값과 반복적으로 비교함으로써 탐색하고자 하는 항목에 접근한다. 이런 방법들은 최대 가능한 시간 복잡도가 O(logn)에 그친다. 이 정도의 시간 복잡도만 되어도 괜찮은 응용도 있지만, 어떤 응용에서는 더 빠른 탐색 알고리즘을 요구한다.
+
+해싱은 O(1)의 시간 안에 탐색을 끝마칠 수 있다.
+
+
+
+해싱은 키에 산술적인 연산을 적용하여 항목이 저장되어 있는 테이블의 주소를 계산하여 항목에 접근한다. 이렇게 키에 대한 연산에 의해 직접 접근이 가능한 구조를 해시 테이블이라 부르며, 해시 테이블을 이용한 탐색을 해싱이라고 한다. 해싱은 많은... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/algorithm/2022/11/25/20221125.html">
+          소수 만들기(알고리즘), 약수의 갯수와 덧셈
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 25, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/algorithm/2022/11/25/20221125.html">
+        <p>
+        1. 소수만들기 - 프로그래머스(level 1)
+
+문제 설명
+
+주어진 숫자 중 3개의 수를 더했을 때 소수가 되는 경우의 개수를 구하려고 합니다. 숫자들이 들어있는 배열 nums가 매개변수로 주어질 때, nums에 있는 숫자들 중 서로 다른 3개를 골라 더했을 때 소수가 되는 경우의 개수를 return 하도록 solution 함수를 완성해주세요.
+
+제한사항
+
+
+  nums에 들어있는 숫자의 개수는 3개 이상 50개 이하입니다.
+  nums의 각 원소는 1 이상 1,000 이하의 자연수이며, 중복된 숫자가 들어있지 않습니다.
+
+
+
+
+입출력 예
+
+
+  
+    
+      nums
+      result
+    
+  ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#algorithm">#algorithm</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/kotlin/2022/11/24/20221124.html">
+          코틀린 유용 문법들
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 24, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/kotlin/2022/11/24/20221124.html">
+        <p>
+        2022-11-24(목요일)
+
+코틀린으로 알고리즘 풀때 필요한 문법들
+
+1. readLine()
+
+//1. 입출력
+val a = readLine()
+
+//2. 정수형 변환
+val a = readLine()!!.toInt()
+
+//3. 실수형 변환
+val a = readLine()!!.toString()
+
+//4. 한번에 여러 입력 받기
+val a, b = readLine()!!.splint(" ").map{ it.toInt() }
+
+
+2. 빠른 입출력
+
+var br = BufferedReader(InputStreamReader(System.`in`))
+val input = br.readLine()
+val input... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Kotlin">#Kotlin</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/study/2022/11/23/20221123.html">
+          안드로이드 Activity 생명주기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 23, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/study/2022/11/23/20221123.html">
+        <p>
+        2022-11-23(수요일)
+
+1. Activity 생명 주기
+
+: onCreate() -&gt; onStart() -&gt; onResume() -&gt; Activity Running -&gt; onPause() -&gt; onStop() -&gt; onDestroy() 의 생명주기를 가진다.
+
+
+  onCreate() : 생성
+  onStart() : 앱이 UI를 관리하는 코드 초기화를 하며, 액티비티가 포그라운드에 들어가기 바로 전이다.
+  onResume() : 액티비티가가 포그라운드에 진입하면서 필요한 기능을 활성화 하는 상태이며, 포커스를 얻는 상태가 된다.
+  onPause() : 사용자가 활동을 멈... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/study/2022/11/21/20221121.html">
+          깃 커밋 메세지 컨벤션
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 21, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/study/2022/11/21/20221121.html">
+        <p>
+        2022-11-21(월요일)
+
+Git - Commit Message Convention
+
+커밋 메세지를 작성할 때는 원칙을 정하고 일관성 있게 작성해야 한다.
+
+1. Commit Message Structure
+
+기본적으로 커밋 메세지는 아래와 같이 제목/본문/꼬리말로 구성한다.
+
+type : subject
+
+body
+
+footer
+
+
+2. Commit Type
+
+
+  feat : 새로운 기능 추가
+  fix : 버그 수정
+  docs : 문서 수정
+  style : 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
+  refactor : 코드 리펙토링
+  test : 테스트 코드, 리펙토링 테스트 코드 추가
+... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/algorithm/2022/11/18/20221118.html">
+          신고 결과 받기(알고리즘)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 18, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/algorithm/2022/11/18/20221118.html">
+        <p>
+        신고 결과 받기 - 프로그래머스 (level 1)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/92334
+
+문제 설명
+
+문제 설명
+
+신입사원 무지는 게시판 불량 이용자를 신고하고 처리 결과를 메일로 발송하는 시스템을 개발하려 합니다. 무지가 개발하려는 시스템은 다음과 같습니다.
+
+
+  각 유저는 한 번에 한 명의 유저를 신고할 수 있습니다.
+    
+      신고 횟수에 제한은 없습니다. 서로 다른 유저를 계속해서 신고할 수 있습니다.
+      한 유저를 여러 번 신고할 수도 있지만, 동일한 유저에 대한 신고 횟수는 1회로 처리됩니다.
+    
+  
+... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#algorithm">#algorithm</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/11/17/20221117.html">
+          AVL 트리
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 17, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 8 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/11/17/20221117.html">
+        <p>
+        AVL트리
+
+AVL트리는 Adelson-Velskii와 Landis에 의해 1962년에 제안된 트리로서 각 노드에서 왼쪽 서브 트리의 높이와 오른쪽 서브 트리의 높이 차이가 1 이하인 이진 탐색 트리를 말한다.
+
+AVL트리는 트리가 비 균형상태로 되면 스스로 노드들을 재배치하여 균형 상태로 만든다.
+따라서 AVL트리는 균형 트리가 항상 보장되기 때문에 탐색이 O(logn)시간 안에 끝나게 된다. 또한 삽입과 삭제 연산도 O(logn)시간 안에 할 수 있다.
+
+
+
+(a)는 모든 노드에서 양쪽 서브 트리의 높이의 차이가 1이하이다.
+그러나 (b)는 노드 7에서 왼쪽 서브 트리의 높이가 2인 반명 오른쪽 서브 높이가 0... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/11/16/20221116.html">
+          색인 순차 탐색, 보간 탐색
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 16, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/11/16/20221116.html">
+        <p>
+        색인 순차 탐색
+
+색인 순차 탐색이란 인덱스라 불리는 테이블을 사용하여 탐색의 효율을 높이는 방법이다.
+인덱스 테이블은 주 자료리스트에서 일정 간격으로 발췌한 자료를 가지고 있다.
+인덱 테이블에 m개의 항목이 있고, 주 자료 리스트의 데이터 수가 n이면 각 인덱스 항목은 주 자료 리스트의 각 n/m번째 데이터를 가지고 있다. 이 때 주 자료 리스트와 인덱스 테이블은 모두 정렬되어 있어야 한다.
+
+
+
+색인 순차 탐색은 위의 그림에서 보듯이 우선 인덱스 테이블에서 index[i] ≤ key &lt; index[i + 1]을 만족하는 항목을 찾는다. 인덱스 테이블에서 위의 조건을 만족하는 항목으로부터 주 자료 리스트에서... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/11/15/20221115.html">
+          이진 탐색
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 15, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/11/15/20221115.html">
+        <p>
+        정렬된 배열에서의 탐색
+
+정렬되어 있지 않은 배열의 순차 탐색을 이해하고 구현하기는 쉽다. 
+만약 배열의 항목이 얼마 되지 않는 경우에는 충분히 가능한 알고리즘이다.
+그러나 배열이 많은 항목을 가지는 경우에는 순차 탐색은 너무나 비효율적인 방법이다. 예를 들어 10개중의 하나를 찾는 것은 순차 탐색으로 가능하지만 100000개 정도라면 상당한 시간이 소요된다. 만약 10억 개 중에서 하를 찾는 문제라면 순차 탐색하는 것은 상당히 비효율적이다. 따라서 보다 빠른 방법이 요구된다. 아주 효율적인 탐색 알고리즘인 이진 탐색을 살펴보겠다.
+
+
+
+이진 탐색
+
+정렬된 배열의 탐색에는 이진 탐색이 가장 적합하다. 이진 탐색은 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/11/14/20221114.html">
+          탐색
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 14, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/11/14/20221114.html">
+        <p>
+        탐색
+
+사사람들은 항상 무엇인가를 찾아 헤맨다. 예를 들면 출근할 때 입은 옷을 찾는다거나 서랍속의 서류를 찾기도 한다. 텀퓨터에서도 마찬가지다. 실제로 탐색은 컴퓨터가 가장 많이 하는 작업 중의 하나이다.
+탐색은 컴퓨터 프로그램에서 가장 많이 사용하는 작업임과 동시에 많은 시간이 요구되므로 탐색을 효율적으로 수행하는 것은 매우 중요하다.
+
+탐색 키
+
+탐색의 단위는 항목이다. 항목은 가장 간단하게는 숫자일 수도 있고 아니면 구조체가 될 수도 있다.
+항목 안에는 항목과 항목을 구별시켜주는 키(key)가 존재한다.
+이를 탐색키라고 한다. 탐색이란 탐색키와 데이터로 이루어진 여러 개의 항목 주에서 원하는 탐색키를 가지고... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/algorithm/2022/11/11/20221111_2.html">
+          두개 뽑아서 더하기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 11, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/algorithm/2022/11/11/20221111_2.html">
+        <p>
+        두개 뽑아서 더하기 - 프로그래머스 (Level 1 )
+
+url : https://school.programmers.co.kr/learn/courses/30/lessons/68644
+
+제한사항
+
+
+  numbers의 길이는 2 이상 100 이하입니다.
+    
+      numbers의 모든 수는 0 이상 100 이하입니다.
+    
+  
+
+
+
+
+입출력 예
+
+
+  
+    
+      numbers
+      result
+    
+  
+  
+    
+      [2,1,3,4,1]
+      [2,3,4,5,6,7]
+    
+    
+      [5,0,2,7]
+      [2,5,7,9,12]
+    
+  
+
+
+... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#algorithm">#algorithm</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/algorithm/2022/11/11/20221111_1.html">
+          자릿수 더하기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 11, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/algorithm/2022/11/11/20221111_1.html">
+        <p>
+        자릿수 더하기
+
+url : https://school.programmers.co.kr/learn/courses/30/lessons/12931
+
+문제 설명
+
+자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요.예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다.
+
+제한사항
+
+
+  N의 범위 : 100,000,000 이하의 자연수
+
+
+
+
+입출력 예
+
+
+  
+    
+      N
+      answer
+    
+  
+  
+    
+      123
+      6
+    
+    
+      987
+      24
+    
+  
+
+
+입출... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#algorithm">#algorithm</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/11/10/20221110.html">
+          리스트(이중 연결 리스트)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 10, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/11/10/20221110.html">
+        <p>
+        이중 연결 리스트
+
+단순 연결 리스트에서 어떤 노드에서 후속 노드를 찾기는 쉽지만, 선행 노들르 찾으려면 구조상 아주 어렵다.
+원형 연결 리스트라고 하더라도 거의 전체 노드를 거쳐서 돌아 오야 한다. 따라서 응용 프로그램에서 특정 노드에서 양방향으로 자유롭게 움직일 필요가 있다면 단순 연결 리스트 구조는 부적합하다. 이중 연결 리스트는 이러한 문제점을 해결하기 위하여 만들어진 자료구조이다.
+
+
+
+즉, 하나의 노두가 선행 노드와 후속 노드에 대한 두 개의 링크를 가지는 리스트이다.
+
+[단점] : 공간을 많이 차지하고 코드가 복잡해진다는 것이다.
+
+
+
+헤드 노드
+
+
+  데이터를 가지지 않고 단지 삽입, 삭제 코드를 간... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/11/09/20221109.html">
+          리스트(원형 리스트)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 09, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/11/09/20221109.html">
+        <p>
+        원형 연결리스트
+
+원형 연결 리스트란 마지막 노드가 첫 번째 노드를 가리키는 리스트이다. 즉, 마지막 노드의 링크 필드가 널이 아니라 첫 번째 노드 주소가 되는 리스트이다.
+
+원형리스트의 장점은 하나의 노드에서 다른 모든 노드로의 접근이 가능하다. 하나의 노드에서 링크를 계속 따라 가면 결국 모든 노드를 거쳐서 자기 자신으로 되돌아 올 수 있는 것이다.
+
+
+
+보통 헤드포인터가 마지막 노드를 가르키게끔 구성하면 리스트의 처음이나 마지막에 노드를 삽입하는 연산이 단순 연결 리스트에 비하여 용이하다.
+
+
+
+원형 연결 리스트의 처음에 삽입 연산
+
+ListNode* insert_first(ListNode* head, ele... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/11/08/20221108.html">
+          리스트(연결 리스트)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 08, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/11/08/20221108.html">
+        <p>
+        리스트(연결 리스트)
+
+연결 리스트로 리스트를 구현시 동적으로 크기가 변할 수 있고 삭제나 삽입 시에 데이터를 이동할 필요가 없다.
+연결된 표현은 포인터를 사용하여 데이터들을 연결한다. 연결된 표현은 널리 사용되며 추상 데이터 타입 “리스트”의 구현에만 사용되는 것이 아니고 다른 여러 가지의 자료구조(트리, 그래프, 스택, 큐) 등을 구현하는데도 많이 사용된다.
+
+연결된 표현은 일단 데이터를 한군데 모아두는 것을 포기하는 것이다. 데이터들은 메인 메모리상의 어디에나 흩어져서 존재할 수 있다. 이런 식으로 물리적으로 흩어져 있는 자료들을 서로 연결하여 하나로 묶는 방법을 연결 리스트라고 한다. 상자를 연결하는 줄은 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/11/07/20221107.html">
+          리스트
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 07, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/11/07/20221107.html">
+        <p>
+        리스트 (배열 리스트)
+
+리스트는 우리들이 자료를 정리하는 방법 중의 하나이다.
+
+리스트에는 항복들이 차례대로 저장되어 있다. 리스트의 항목들은 순서 또는 위치를 가진다.
+앞에서 살펴본 스택과 큐도 넓게 보면 리스트의 일종이다.
+
+
+
+리스트의 ADT
+
+▪ insert(list, pos, item) ::= pos 위치에 요소를 추가한다.
+▪ insert_last(list, item) ::= 맨 끝에 요소를 추가한다.
+▪ insert_first(list, item) ::= 맨 처음에 요소를 추가한다.
+▪ delete(list, pos) ::= pos 위치의 요소를 제거한다.
+
+▪ clear(list) ::= 리스트의 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/algorithm/2022/11/04/20221104.html">
+          숫자 문자열과 영단어
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 04, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/algorithm/2022/11/04/20221104.html">
+        <p>
+        프로그래머스 - 숫자 문자열과 영단어
+
+url : https://school.programmers.co.kr/learn/courses/30/lessons/81301
+
+문제 설명
+
+
+
+네오와 프로도가 숫자놀이를 하고 있습니다. 네오가 프로도에게 숫자를 건넬 때 일부 자릿수를 영단어로 바꾼 카드를 건네주면 프로도는 원래 숫자를 찾는 게임입니다.다음은 숫자의 일부 자릿수를 영단어로 바꾸는 예시입니다.
+
+
+  1478 → “one4seveneight”
+  234567 → “23four5six7”
+  10203 → “1zerotwozero3”
+
+
+이렇게 숫자의 일부 자릿수가 영단어로 바뀌어졌거나, 혹은 바뀌지 않고 그대로인... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#algorithm">#algorithm</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/11/03/20221103.html">
+          큐
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 03, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/11/03/20221103.html">
+        <p>
+        큐?
+
+스택과 마찬가지로 데이터를 일시적으로 쌓아 놓은 자료구조이다.스택을 프링글스통 이라고 한다면 큐는 그 프링글스 통의 바닥부분을 뻥 뚫어놓은 것.즉 스택과는 다르게 먼저 넣은 데이터를 먼저 꺼내는 선입선출(FIFO, LILO)의 구조이다.
+
+관련 용어 정리
+
+
+  인큐(enqueue) : 큐에 데이터를 넣는 작업
+  디큐(dequeue) : 큐에서 데이터를 꺼내는 작업
+  프런트(front) : 데이터를 꺼내는 쪽, 출구
+  리어(rear) : 데이터를 넣는 쪽, 입구
+
+
+https://w.namu.la/s/b7785ff70f623fedbcae126015a3ae0a18b2f3a785bdd691d803aad2b... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/todo/2022/11/02/20221102.html">
+          2022/11/01(화요일)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 02, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/todo/2022/11/02/20221102.html">
+        <p>
+        오늘의 하루
+
+⇒ 오늘은 k-해커톤 대회를 나가서 무려 대상을 탔다,,!@!
+⇒ 그래서 오늘은 공부한 내용이 없어 커밋이 간단합니다…..
+⇒ 내일은 탐색 알고리즘을 마저 공부해서 커밋을 하겠습니다,,!!
+
+
+
+앞으로의 공부할 내용 정리
+
+
+  자료구조
+
+
+⇒ 현재는 정렬끝. 현재 탐색 알고리즘 공부 중
+
+
+  안드로이드 공부
+
+
+⇒ 우아한 테크코스 5기 지원 완료. 프리코스 진행 중 ( 현재 1주차가 끝나고 2주차 진행중  -&gt; 숫자 야구 구현하기 )
+
+
+  그 외 안드로이드 공부
+
+
+→ mvvm구조, rxKotlin, 레포지토리 패턴, 코루틴, 안드로이드 생명주기
+
+
+  우아한 테크코스 최종 코테를 위한 준... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#TODO">#TODO</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/11/01/20221101.html">
+          스택
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 01, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/11/01/20221101.html">
+        <p>
+        스택(Stack)
+
+스택이란?
+
+스택은 데이터를 임시 저장할 때 사용하는 자료구조로, 데이터의 입력과 출력 순서는 후입선출(FILO)방식이다. 데이터를 제한적으로 접근할 수 있는 구조이고, 한쪽 끝에서만 자료를 넣거나 뺄 수 있는 구조이다.
+
+스택은 콜 스택(call stack)이라 하여 컴퓨터 프로그램의 서브루틴에 대한 정보를 저장하는 자료구조에도 널리 활용된다. 컴파일러가 출력하는 에러도 스택처럼 맨 마지막 에러가 가장 먼저 출력되는 순서를 보인다. 또한 스택은 메모리 영역에서 LIFO 형태로 할당하고 접근하는 구조인 아키텍처 레벨의 하드웨어 스택의 이름으로도 널리 사용된다. 이외에도 꽉 찬 스택에 요소를 삽입... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/10/31/20221031.html">
+          이진 트리
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 31, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/10/31/20221031.html">
+        <p>
+        이진 트리(Binary Tree) 란 무엇인가?
+
+
+  각각의 노드가 최대 2개의 자식 노드를 가질 수 있는 트리이다.
+  정렬과 검색 알고리즘을 위한 하나의 도구
+    
+      이진 트리의 모양에 따라 알고리즘의 성능에 차이가 있다.
+      트리의 형태는 레벨과 노드 수에 따라서 결정된다.
+    
+  
+
+
+이진 트리(Binary Tree) 의 종류
+
+1. Perfect binary tree 포화 이진 트리
+
+
+  포화 이진 트리는 모든 레벨의 노드가 가득 차있는 트리이다.
+    
+      노드가 2개의 자식을 가지고 있다.
+      차수(Degree) 가 2 이다.
+    
+  
+  모든 노드가 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/algorithm/2022/10/28/20221028.html">
+          행렬 테두리 회전하기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 28, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 6 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/algorithm/2022/10/28/20221028.html">
+        <p>
+        프로그래머스 - 행렬 테두리 회전하기
+
+url : https://school.programmers.co.kr/learn/courses/30/lessons/77485
+
+문제 설명
+
+rows x columns 크기인 행렬이 있습니다. 행렬에는 1부터 rows x columns까지의 숫자가 한 줄씩 순서대로 적혀있습니다. 이 행렬에서 직사각형 모양의 범위를 여러 번 선택해, 테두리 부분에 있는 숫자들을 시계방향으로 회전시키려 합니다. 각 회전은 (x1, y1, x2, y2)인 정수 4개로 표현하며, 그 의미는 다음과 같습니다.
+
+
+  x1 행 y1 열부터 x2 행 y2 열까지의 영역에 해당하는 직사각형에서 테두리에 있는... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#algorithm">#algorithm</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/kotlin/2022/10/27/20221027.html">
+          코틀린의 정렬 매서드
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 27, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 7 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/kotlin/2022/10/27/20221027.html">
+        <p>
+        2022-10-27(목요일)
+
+코틀린의 정렬 메서드
+
+1. Immutable 리스트 정렬
+
+sorted()는 데이터 변경이 안되는 리스트(Immutable list)를 정렬할 때 사용합니다. sorted()는 리스트의 원본을 변경하지 않고, 정렬된 리스트를 생성하여 리턴합니다.
+
+다음은 Immutable 리스트를 sorted()로 정렬하는 예제입니다.
+
+fun main(args: Array&lt;String&gt;){
+
+    val list = listOf(10, 100, 50, 2, 77, 4)
+
+    val sorted = list.sorted()
+    println("sorted: $sorted")
+}
+... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Kotlin">#Kotlin</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/todo/2022/10/26/20221026.html">
+          2022/10/26(수요일)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 26, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/todo/2022/10/26/20221026.html">
+        <p>
+        오늘 공부한 내용
+
+⇒ 오늘은 시험 마지막날로 인해 공부를 하지 못했습니다,,,!!!!
+
+
+
+앞으로의 공부할 내용 정리
+
+
+  자료구조
+
+
+⇒ 현재는 정렬 공부중. 이후에 탐색 알고리즘 공부할 예정
+
+
+  안드로이드 공부
+
+
+⇒ 우아한 테크코스 5기 지원 완료. 프리코스 진행 중
+
+→ 4주동안 7개의 과제 진행할 예정
+
+
+  그 외 안드로이드 공부
+
+
+→ mvvm구조, rxKotlin, 레포지토리 패턴, 코루틴, 안드로이드 생명주기
+
+
+  우아한 테크코스 최종 코테를 위한 준비
+
+
+→ 과제 구현 후 리펙토링 필수
+ <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#TODO">#TODO</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/10/25/20221025.html">
+          기수 정렬
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 25, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/10/25/20221025.html">
+        <p>
+        기수 정렬
+
+이때까지의 정렬 방법들은 모두 레코드들을 비교하여 정렬한다. 따라서 비교가 불가능한 레코드들은 정렬할 수 없다. 기수 정렬은 레크드를 비교하지 않고도 정렬하는 방법이다. 기수 정렬은 입력 데이터에 대해 어떤 비교 연산도 실행하지 않고 데이터를 정렬할 수 있는 색다른 정렬 방법이다.
+
+기수 정렬 수행 방법
+
+기수 정렬은 다음과 같은 과정을 거쳐서 정렬을 수행한다. 예를 들어, 현재 가지고 있는 데이터 중 가장 큰 자릿수가 100의 자리라고 해보자.
+
+
+  각 데이터들의 1의 자리를 비교해서 같은 데이터끼리 모은다. 1의 자리가 작은 데이터들이 앞에 위치하게 되고 큰 숫자들이 뒤에 위치하게 된다.(오름차순... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/10/24/20221024.html">
+          병합 정렬
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 24, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/10/24/20221024.html">
+        <p>
+        개요
+
+병합 정렬은 배열을 쪼갠 뒤, 다시 병합시키면서 차근차근 정렬해나가는 방식을 사용한다. 이 때 배열을 쪼개는 로직은 퀵 소트와 비슷하다.
+
+이는 퀵 소트와 마찬가지로 분할 정복 기법을 통해 구현하게 된다. 병합 정렬 알고리즘도 속도가 매우 빠르기때문에 퀵 소트와 함께 많이 언급되는 정렬 방식이다. 퀵 소트와 다른 점이라면 병합 정렬은 안정 정렬에 속한다는 점 정도. (즉, 정렬 후에도 같은 값을 가진 원소간의 순서가 바뀌지 않음을 보장한다.)
+
+로직
+
+
+  배열을 쪼갤 수 없을 때까지 계속하여 분할한다.
+  더 이상 쪼갤 수 없을 때, 왼쪽 배열과 오른쪽 배열을 정렬하여 병합한다.
+    
+      이 때... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/algorithm/2022/10/21/20221021.html">
+          모음 사전(알고리즘)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 21, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/algorithm/2022/10/21/20221021.html">
+        <p>
+        프로그래머스 : 모음사전 (level2) - 완전탐색
+
+Url : https://school.programmers.co.kr/learn/courses/30/lessons/84512
+
+class Solution {
+
+fun solution(word: String): Int {
+        var answer = 0
+        var valueArr : Array&lt;Int&gt; = arrayOf(781, 156, 31, 6, 1)
+
+        for(i in 0 until word.length){
+            var value = findvalue(word[i])
+            answe... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#algorithm">#algorithm</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/10/20/20221020.html">
+          퀵 정렬
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 20, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/10/20/20221020.html">
+        <p>
+        퀵정렬이란?
+
+
+  퀵 정렬은 기준점을 획득한 다음 해당 기준점을 기준으로 배열을 나눈다. 한 쪽에는 기준점보다 작은 항목들이 위치하고 다른 쪽에는 기준점보다 큰 항목들이 위치한다. 나뉘어진 하위 배열에 대해 재귀적으로 퀵 정렬을 호출하여, 모든 배열이 기본 배열(요소가 하나뿐인 배열)이 될 때까지 반복하면 정렬이 완료된다.
+
+
+
+❓ 기준점을 정하는 방법이 따로 있을까 ?👉 보통은 정렬할 배열의 첫번째 원소, 마지막 원소, index가 중앙값인 원소를 기준점으로 정한다.
+
+퀵정렬 알고리즘
+
+
+  분할 ➡ 정복 ➡ 결합
+
+  
+    분할 (Divide)정렬할 배열을 기준점을 기준으로 2개의 부분배열로 분할한다.
+ ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/10/19/20221019.html">
+          쉘 정렬
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 19, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/10/19/20221019.html">
+        <p>
+        쉘 정렬
+
+쉘 정렬은 Donald L. Shell이라는 사람이 제안한 방법으로 삽입 정렬이 어느 정도 정렬된 배열에 대해서는 대단히 빠른 것에 착안한 방법이다. 쉘 정렬은 삽입 정렬의 O(n^2)보다 빠르다.
+
+삽입 정렬의 최대 문제점은 요소들이 삽입될 때, 이웃한 위치로만 이동한다는 것이다.
+만약 삽입되어야 할 위치가 현재 위치에서 당항히 멀리 떨어진 곳이라면 많은 이동을 해야 만이 제자리로 갈 수 있다. 쉘 정렬에서는 요소들이 멀리 떨어진 위치로도 이동할 수 있다.
+
+삽입정렬과는 다르게 쉘 정렬은 전체의 리스트를 한 번에 정렬하지 않는다. 대신에 먼저 정렬해야할 리스트를 일정한 기준에 따라 분류하여 연속적이지 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/10/18/20221018.html">
+          삽입 정렬
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 18, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/10/18/20221018.html">
+        <p>
+        삽입 정렬
+
+삽입 정렬은 손안의 카드를 정렬하는 방법과 유사하다. 우리는 카드 게임을 할 때, 새로운 카드가 들어오면 새로운 카드를 기존의 정렬된 카드 사이의 올바른 자리를 찾아 삽입함으로써 정렬이 윧지되게 한다. 이와 같은 작업을 카드의 수만큼 반복하게 되면 전체 카드가 정렬된다.
+
+삽입 정렬은 정렬되어 있는 리스트에 새로운 레코드를 적절한 위치에 삽입하는 과정을 반복한다. 선택 정렬과 마찬가지로 입력 배열을 선택 정렬과 유사하게 입력배열을 정렬된 부분과 정렬되지 않은 부분으로 나누어 사용하면 된다.
+
+
+
+void insertion_sort(int list[], int n){
+	int i, j, key;
+	for... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/10/17/20221017.html">
+          선택 정렬
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 17, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/10/17/20221017.html">
+        <p>
+        정렬
+
+정렬(sorting)은 물건을 크기순으로 오름차순이나 내림차수능로 나열하는 것을 의미한다.
+예를 들어 책들은 제목순이나 저자순, 또는 발간연도순으로 정렬이 가능하다. 사람도 나아가 키, 이름 등을 이용하여 정렬할 수 있다. 물건뿐만아니라 어떤 형태의 것도 서로 비교만 가능하다면 정렬할 수 있다.
+
+정렬은 컴퓨터 공학에서 가장 기본적이고 중요한 알고리즘 중의 하나로 일상생활에서 많이 사용된다.
+또한 정렬은 자료 탐색에 있어서 필수적이다. 예를 들면 사전에서 우리가 단어를 쉽게 찾을 수 있는 것은 사전안의 단어들이 알파벳순으로 정렬되어 있기 때문이다.
+
+일반적으로 보통 정렬시켜야 될 대상은 레코드라고 불린다. ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/algorithm/2022/10/14/20221014.html">
+          프린터(알고리즘)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 14, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/algorithm/2022/10/14/20221014.html">
+        <p>
+        프린터 ( 프로그래머스 level2 )
+
+url :https://school.programmers.co.kr/learn/courses/30/lessons/42587
+
+import java.util.*
+
+class Solution {
+    fun solution(priorities: IntArray, location: Int): Int {
+        var keyqueue: Queue&lt;Int&gt; = LinkedList()
+        var valuequeue: Queue&lt;Int&gt; = LinkedList()
+        var answer = 0
+
+        for (i in 0 un... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#algorithm">#algorithm</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/10/13/20221013.html">
+          동적 계획 알고리즘(DP)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 13, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/10/13/20221013.html">
+        <p>
+        동적 계획 알고리즘 (Dynamic Programming, DP)
+
+다이나믹 프로그래밍이란?
+
+
+  다이나믹 프로그래밍(Dynamic Programming, DP) 알고리즘은 메모리 공간을 약간 더 사용하면서 연산 속도를 비약적으로 증가시킬 수 있는 기법이다.
+  이미 계산된 결과(작은 문제)는 별도의 메모리 영역에 저장하여 다시 계산하지 않도록 한다.
+  다이나믹 프로그래밍의 구현은 일반적으로 탑다운(top-down) 방식과 보텀업(bottom-up) 방식
+
+
+조건
+
+다이나믹 프로그래밍은 다음 조건들을 만족할 때 사용할 수 있다.
+
+
+  큰 문제를 작은 문제로 나눌 수 있고 그 작은 문제의 답을 모에서 큰 문제를... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/ds/2022/10/12/20221012.html">
+          트리(자료구조)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 12, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/ds/2022/10/12/20221012.html">
+        <p>
+        트리 (자료구조)  - Tree
+
+트리 (Tree)란 노드들이 나무 가지처럼 연결된 비선형 계층적 자료구조입니다.
+
+트리는 다음과 같이 나무를 거꾸로 뒤집어 놓은 모양과 유사합니다.
+
+
+
+트리는 또한 트리 내에 다른 하위 트리가 있고 그 하위 트리 안에는 또 다른 하위 트리가 있는 재귀적 자료구조이기도 합니다.
+
+컴퓨터의 direcory구조가 트리 구조의 대표적인 예가 될 수 있습니다.
+
+
+
+트리 구조에서 사용되는 기본 용어
+
+
+
+
+
+노드 (Node)
+
+
+  트리를 구성하고 있는 기본 요소
+  노드에는 키 또는 값과 하위 노드에 대한 포인터를 가지고 있음.
+  A, B, C, D, E, F, G, H, I, J
+
+... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#DS">#DS</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/todo/2022/10/11/20221011.html">
+          코틀린의 조건문(when)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 11, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/todo/2022/10/11/20221011.html">
+        <p>
+        조건문 when
+
+조건문 when을 이해하기 위해서는 먼저 다른 언어의 switch 문을 공부하는 것이 도움된다.
+다른 언어에서의 switch문을 if문과 비교하자면 switch 문은 if문의 연산식에서 사용되는 비교 연산자 중에 ==만 사용해서 같은 값인지를 비교하는 조건문이다.
+
+코틀린을 제외한 거의 모든 컴퓨터 언어에서는 switch라는 이름으로 사용되며 선택문이라고 불리기도 한다.
+
+switch(변수){
+	case 비교값:
+		//변수값이 비교값과 같다면 이 영역이 실행된다.
+}
+
+
+하지만 코틀린의 when 문은 다른 언어와는 다르게 같은 값뿐만 아니라 범위 값도 처리할 수 있고 사용 방법도 더 많다. 코틀... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#TODO">#TODO</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Review">#Review</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/todo/2022/10/10/20221010.html">
+          2022/10/10(월요일)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 10, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/todo/2022/10/10/20221010.html">
+        <p>
+        오늘 공부한 내용
+
+
+  지킬 찾아보기
+  지킬 테마 찾기
+  지킬 실행시켜보기
+  프로그래밍언어론 공부
+
+
+지킬이란 ?
+
+정적 사이트 빌더(Static Website Builder)입니다. Github의 공동 설립자가 Liquid 언어로 만들었습니다.
+
+템플릿과 템플릿 구성요소, 인라인 코드, 마크다운과 같은 동적인 구성요소를 정적인 웹페이지로 만들어주는 파싱 엔진입니다.
+
+지킬 사용법
+
+
+  깃허브에 지킬 테마 검색
+  테마를 pork딴후 [user_name].github.io로 rename
+  settings - pages에 들어가서 설정
+  _config.yml 파일에서 url, baseurl 수정
+
+ <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#TODO">#TODO</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Review">#Review</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/algorithm/2022/10/07/20221007.html">
+          신규 아이디 추천(알고리즘)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 07, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 4 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/algorithm/2022/10/07/20221007.html">
+        <p>
+        프로래머스 - 신규 아이디 추천
+
+⇒ 2021 KAKAO BLIND RECRUITMENT : https://school.programmers.co.kr/learn/courses/30/lessons/72410
+
+class Solution {
+    public String solution(String new_id) {
+String answer = "";
+        String str;
+        answer = new_id.toLowerCase();
+        answer = answer.replaceAll("[^0-9a-z_.-]","");
+        answer = answer.replaceAll(... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#algorithm">#algorithm</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/kotlin/2022/10/06/20221006.html">
+          코틀린 보조 생성자
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 06, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/kotlin/2022/10/06/20221006.html">
+        <p>
+        보조 생성자
+
+보조 생성자는 클래스의 본문에 constructor 키워드로 선언하는 함수이다.
+클래스 본문에 선언하므로 여러 개를 추가할 수 있다.
+
+다음 코드에서는 매개변수를 다르게 구성한 보조 생성자를 2개 선언했다.
+보조 생성자도 생성자이므로 객체를 생성할 때 자동으로 호출된다. 그리고 보조 생성자는 클래스 본문에 선언하므로 생성자 본문을 중괄호 { }로 묶어서 객체 생성과 동시에 실행할 영역을 지정할 수 있다.
+
+
+  보조 생성자 선언
+
+
+class User{
+	constructor(name : String){
+		println("constructor(name : String) call...")
+	}
+	co... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Kotlin">#Kotlin</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/todo/2022/10/05/20221005.html">
+          깃허브 페이지 만들기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 05, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/todo/2022/10/05/20221005.html">
+        <p>
+        오늘 공부한 내용
+
+
+  정보처리방침 작성 방법
+  git page 만들기
+  배포를 위한 준비
+  release 준비
+  핫픽스
+
+
+git page 만들기
+
+Repository name:
+
+
+  반드시 .github.io 또는 .github.io로 명명해야 한다.
+  아래 사진에 보이겠지만 블로그 주인장은 이 블로그의 이름과 맞추기 위해 phodobit을 사용했다가 낭패를 보았다.
+  *반드시 에는 자신의 github 사용자이름을 명확하게 넣자!*
+  만약 .github.com 이라는 저장소와 .github.io 라는 저장소가 공존하는 경우 오직 &lt;사용자이름.github.io 만 사이트로 배포된다. (git... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#TODO">#TODO</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Review">#Review</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/kotlin/2022/10/04/20221004.html">
+          코틀린의 클래스
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 04, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/kotlin/2022/10/04/20221004.html">
+        <p>
+        코틀린 클래스
+
+코틀린에서 클래스는 class 키워드로 선언한다. 다은 코드에서 class User부분이 클래스의 선언부이며
+중괄호 { } 영역이 본문이다. 만약 클래스의 본문에 입력하는 내용이 없다면 { }를 생략할 수 있다.
+
+class User { }
+
+
+클래스의 멤버는 생성자, 변수, 함수, 클래스로 구성된다.
+이 중에서 코틀린의 생성자는 constructor라는 키워드로 선언하는 함수이다. 그리고 클래스 안에 다른 클래스를 선언할 수도 있다.
+
+class User{
+	var name = "kkang"
+	constructor(name : String){
+		this.name = name
+	}
+	
+	fun s... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Kotlin">#Kotlin</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/android/2022/10/03/20221003.html">
+          카카오맵의 생명주기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 03, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/android/2022/10/03/20221003.html">
+        <p>
+        오늘 공부한 내용
+
+
+  k-해커톤 준비(줍깅)
+  밤샘 개발,,,
+  카카오맵 API 생명주기
+  retrofit2
+  mvvm
+  rxKotlin
+  코루틴
+
+
+카카오맵의 생명주기
+
+private lateinit var mapView : MapView  //카카오맵뷰
+private lateinit var mapViewContainer: ViewGroup
+
+//onResume에서 생성한다.
+override fun onResume() {
+		super.onResume()
+
+		//맵뷰 등록
+		mapView = MapView(this)
+		mapViewContainer = binding.ploggingKakaoMa... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Android">#Android</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Kotlin">#Kotlin</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/algorithm/2022/09/30/20220930.html">
+          3진법 뒤집기(알고리즘)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 30, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/algorithm/2022/09/30/20220930.html">
+        <p>
+        프로그래머스 level1 - 3진법 뒤집기
+
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+
+        String Ternary = "";  //3진수 저장
+        while(n &gt; 0){
+            Ternary = (n % 3) + Ternary;
+            n /= 3;
+        }
+
+        long Ternary3 = Long.parseLong(Ternary);// 3진수 int형으로 저장
+        long BackTernary = 0;  //3진수의 역수 저장
+
+ ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#algorithm">#algorithm</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/kotlin/2022/09/29/20220929.html">
+          코틀린 조건문
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 29, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/kotlin/2022/09/29/20220929.html">
+        <p>
+        조건문 if~else와 표현식
+
+if~else문은 프로그램의 흐름을 제어하는 데 가장 많이 사용한다.
+
+fun main(){
+
+	var data = 10
+
+	if(data &gt; 0){
+
+		println("data &gt; 0")
+
+	}else{
+
+		println("data &lt;= 0")
+
+	}
+}
+
+
+if 문에 명시한 조건을 만족하면 if 부분을 실행하고, 그렇지 않으면 else 부분을 실행한다.
+또한 else if를 이용해 다음처럼 조건을 여러 개 나열할 수 도 있다.
+
+fun main(){
+
+	var data = 10
+
+	if(data &gt; 0){
+
+		println("data &gt; 0")
+
+... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Kotlin">#Kotlin</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/kotlin/2022/09/28/20220928.html">
+          코틀린 함수 선언하기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 28, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/kotlin/2022/09/28/20220928.html">
+        <p>
+        2022-09-28(수요일)
+
+함수 선언하기
+
+코틀린에서 함수를 선언하려면 fun이라는 키워드를 이용해야 한다.
+
+함수에는 반환 타입을 선언할 수 있으며 생략하면 자동으로 Unit타입이 적용된다
+
+fun 함수명(매개변수명 : 타입) : 반환타입 {...}
+
+
+반환 타입이 있는 함수 선언
+
+fun some(data1 : Int) : Int {
+	return data1 * 10
+}
+
+
+함수의 매개변수에는 var나 val키워드를 사용할 수 없다. val이 자동으로 적용되며 함수 안에서 매개변숫값을 변경할 수 없다.
+
+매개변숫값 변경 오류
+
+fun some(data1 : Int){
+	data1 = 20		// 오류!
+}
+... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Kotlin">#Kotlin</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/review/2022/09/27/20220927.html">
+          2022-09-27(화요일)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 27, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/review/2022/09/27/20220927.html">
+        <p>
+        2022-09-27(T)
+
+오늘 공부한 내용
+
+  파이썬(모듈화 기본)
+  안드로이드 생명주기
+  프로젝트 준비(개발)
+
+
+파이썬 모듈화 기본
+사용한 툴 : PyCharm
+
+가장 간단한 프로그램
+
+# iX = 2
+# iY = 3
+#
+# def assign(a, b):
+#     global iX, iY
+#     iY = a
+#     iX = b
+#
+# x, y = map(int, input().split(" "))
+#
+# assign(x, y)
+#
+# def add():
+#     return iX + iY
+#
+# print("Sum :", add())
+
+class XXX:
+    iX = 2
+    iY = ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#TODO">#TODO</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Review">#Review</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/review/2022/09/26/20220926.html">
+          2022-09-26(월요일)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 26, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/review/2022/09/26/20220926.html">
+        <p>
+        2022-09-26(M)
+
+저번 수업시간에 배운내용
+
+
+  버전 컨트롤 도구
+  협업에 도움되는 툴 강의
+    
+      SourceTree, Git(필수)
+    
+  
+  Git 사용법
+  branch
+
+
+Git
+
+기본 개념 :
+
+
+  현재 디렉토리를 git 버전관리 하겠다는 의미
+  add, commit, branch, merge, rollback, revert 모두 가능해짐.
+  git remote add origin {url} : push할 remote 세팅하기
+  로컬 = downstream
+
+
+저번 수업시간에 한 내용
+
+
+  branch 파기
+  이슈 생성해서 그 이슈 번호로 branch 생성
+  ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#TODO">#TODO</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Review">#Review</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/algorithm/2022/09/23/20220923.html">
+          로또의 최고 순위와 최저 순위(알고리즘)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 23, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/algorithm/2022/09/23/20220923.html">
+        <p>
+        2022-09-23(금요일)
+
+코딩테스트 문제
+
+프로그래머스 level1 - 로또의 최고 순위와 최저 순위
+
+url : https://school.programmers.co.kr/learn/courses/30/lessons/77484
+
+class Solution {
+    public int[] solution(int[] lottos, int[] win_nums) {
+        int correct = 7;
+        int zero = 0;
+
+        
+        for(int i = 0; i &lt; lottos.length; i++) {
+
+            if(lottos[i] == 0)... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#algorithm">#algorithm</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/kotlin/2022/09/22/20220922.html">
+          코틀린 데이터 타입
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 22, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/kotlin/2022/09/22/20220922.html">
+        <p>
+        코틀린 데이터 타입
+
+지금부터는 코틀린이 제공하는 데이터 타입을 살펴보겠다.
+그 전에 한가지 알아 둬야할 사실은 코틀린의 모든 변수는 객체라는 것이다.
+따라 모ㄹ린의 모든 타입은 객체 타입이다. 정수를 다루는 타입이 Int인데 Int는 기초 데이터 타입이 아니라 클래스이다.
+
+fun someFun(){
+	var data : Int = 10      
+	var data2 : Int? = null  //null 대입 가능
+
+	data1 = data1 + 10
+	data1 = data1.plus(10)   //객체의 매서드 이용 가능
+}
+
+
+
+위 소스는 data1과 data2 변수를 Int 타입으로 선업했다. 만약 In... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Kotlin">#Kotlin</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/kotlin/2022/09/21/20220921.html">
+          코틀린 변수 선언하기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 21, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/kotlin/2022/09/21/20220921.html">
+        <p>
+        변수 선언하기
+
+코틀린에서 변수는 val, var 키워드로 선언한다. val은 value의 줄임말로 초깃값이 할당되면 바꿀 수 없는 변수를 선언할 때 사용한다. var은 variable의 줄임말로 초깃값이 할당된 후에도 값ㅇ르 바꿀 수 있는 변수를 선언할 때 사용한다.
+
+val(//혹은 var) 변수명 : 타입 = 값
+
+
+다음은 val과 var 키워드의 차이를 보여주는 예이다.
+
+val data1 = 10
+var data2 = 20
+
+fun main(){
+	data1 = 20 // 오류!
+	data2 = 20 // 성공!
+}
+
+
+위 소스를 보면 data1과 data2 변수를 선언했다. 그런데 data1 변수는 va... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Kotlin">#Kotlin</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/kotlin/2022/09/20/20220920.html">
+          코틀린이란 무엇인가
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 20, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/kotlin/2022/09/20/20220920.html">
+        <p>
+        2022-09-20(화요일)
+
+코틀린이란 무엇인가
+
+
+💡 코틀린은 자바 플랫폼에서 돌아가는 새로운 플로그래밍 언어다.
+코틀린은 기존 자바 라이브러리나 프레임워크와 함께 잘 작동하며, 성능도 자바와 같은 수준이다.
+
+
+
+
+
+코틀린과 자바의 관계
+
+
+💡
+
+[IntelliJ IDEA](https://namu.wiki/w/IntelliJ%20IDEA)의 개발사 [JetBrains](https://namu.wiki/w/JetBrains)에서 2011년에 공개한 [오픈 소스](https://namu.wiki/w/%EC%98%A4%ED%94%88%20%EC%86%8C%EC%8A%A4) [프로그래밍 언어](https://namu... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Kotlin">#Kotlin</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/review/2022/09/19/20220919.html">
+          2022-09-16(금요일)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 19, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/review/2022/09/19/20220919.html">
+        <p>
+        2022-09-19(월요일)
+
+오늘 복습한 내용
+
+
+  spring-boot 복습
+  수업했었던 내용(문서) 다시 읽어보기
+
+
+1. Intellij IDEA 설치
+
+2. Intellij IDEA 학생인증하기(학교 웹메일 이메일 필요)
+
+3. JDK 설치하기
+
+
+  권장 JDK : Java17
+  mac OS 일경우 뒤에 aarch64가 붙은걸로 다운받기
+  교수님 추천 버전 : temurin-17 버전
+  
+
+
+4. Spring Initializr에 들어가서 프로젝트 생성하기
+
+
+  Name : spring_boot_project
+  Location : Desktop
+  Language : Java
+  Type :... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#TODO">#TODO</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Review">#Review</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/review/2022/09/16/20220916.html">
+          2022-09-16(금요일)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 16, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/review/2022/09/16/20220916.html">
+        <p>
+        오늘 수업시간에 배운 내용
+
+
+  Intellij IDEA 학생인증
+  Intellij IDEA Spring Boot Project 만들기
+  HTML Project 생성
+  nvm (노드 관리자?) 설치
+  Spring Boot, HTML로 홈페이지 띄우기
+  디버그 모드 실행
+  Intellj IDEA 각종 단축키, 꿀팁
+    
+      유용했던거
+        
+          멀티 커서 : opt + shift + mouse click
+          shift + shift
+        
+      
+    
+  
+
+
+인텔리제이 꿀팁
+
+다음주 공부 일정
+
+
+  스프링 부트 복습
+  HTML에 대한... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#TODO">#TODO</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Review">#Review</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/todo/2022/09/15/20220915.html">
+          2022-09-15(목요일)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 15, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/todo/2022/09/15/20220915.html">
+        <p>
+        2022-09-15(목요일)
+
+오늘 한 일
+
+
+  
+    수업 듣기
+
+    ⇒ 인공지능, 취업과 직업의 세계, 소프트웨어 분석 및 설계, 캡스톤디자인
+  
+  오늘 공부한 내용
+    
+      k - 해커톤 준비를 위한 안드로이드 UI 공부
+      서버 통신을 위한 레트로핏 공부
+    
+  
+  내일 할 공부
+    
+      내일 기초웹 시간에 배우는 수업 내용 복습
+    
+  
+
+ <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#TODO">#TODO</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/todo/2022/09/14/20220914.html">
+          2022-09-14(수요일)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 14, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/todo/2022/09/14/20220914.html">
+        <p>
+        2022-09-14(수요일)
+
+오늘 한 일
+
+
+  OCU 수업(식생활과 건강 듣기)
+  OCU 수업(Ted로 배우는 영화속 바이오테크놀로지)
+  수업듣기(프로그래밍언어론, 소프트웨어분석 및 설계)
+  저녁 연구실 회식
+
+
+오늘은 수업만 듣다가 하루가 끝나서 딱히 공부를 한 내용이 없음
+ <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#TODO">#TODO</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/android/2022/09/13/20220913.html">
+          Android Constraint Layout
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 13, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/android/2022/09/13/20220913.html">
+        <p>
+        2022-09-13(화요일)
+
+오늘 내가 공부한 내용 - Android Constraint layout
+
+[ConstraintLayout](https://developer.android.com/reference/androidx/constraintlayout/widget/ConstraintLayout?hl=ko)을 사용하면 플랫 뷰 계층 구조(중첩 뷰 그룹이 없음)로 크고 복잡한 레이아웃을 만들 수 있습니다.
+
+동위 보기와 상위 레이아웃 사이의 관계에 따라 모든 보기의 레이아웃이 결정된다는 점에서 [RelativeLayout](https://developer.android.com/reference/android/wi... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Android">#Android</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Kotlin">#Kotlin</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/todo/2022/09/12/20220912.html">
+          2022-09-12(월요일)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 12, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/todo/2022/09/12/20220912.html">
+        <p>
+        2022-09-12(월요일)
+
+오늘은 대체 공휴일,,, 그래서 솔직히 한게 없다…
+
+오늘 내가 한 일
+
+
+  낮잠
+  게임
+  ocu 수업 공지 찾아보기
+  함덕 갔다오기
+
+
+내일부터는 다시 공부 제대로해서 공부에 관한 커밋을 해야할거같네,,,
+ <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#TODO">#TODO</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/algorithm/2022/09/09/20220909.html">
+          내적(알고리즘)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 09, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/algorithm/2022/09/09/20220909.html">
+        <p>
+        오늘은 추석연휴!!! 그래서 오늘은 쉬기로 했다!!
+
+그전에 코딩테스트 문제
+
+프로그래머스 level1 - 내적
+
+코딩테스트 연습 - 내적
+
+문제 설명
+
+길이가 같은 두 1차원 정수 배열 a, b가 매개변수로 주어집니다. a와 b의 내적을 return 하도록 solution 함수를 완성해주세요.
+
+이때, a와 b의 내적은 a[0]*b[0] + a[1]*b[1] + ... + a[n-1]*b[n-1] 입니다. (n은 a, b의 길이)
+
+제한 사항
+
+
+  a, b의 길이는 1 이상 1,000 이하입니다.
+  a, b의 모든 수는 -1,000 이상 1,000 이하입니다.
+
+
+풀이
+
+
+class Solution {
+   ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#algorithm">#algorithm</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/android/2022/09/08/20220908.html">
+          안드로이드 카카오맵 with Kotlin
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 08, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/android/2022/09/08/20220908.html">
+        <p>
+        안드로이드 카카오맵 with Kotlin
+
+
+  SDK파일 다운로드
+
+
+⇒  카카오 공식문서에서 DownLoad SDK 버튼을 눌러 다운받고 압축을 푼다. 위치는 상관 없다.
+
+카카오 공식 문서 : https://apis.map.kakao.com/android/guide/
+
+
+  카카오 개발자 사이트 - 개발자 등록, 앱 생성
+
+
+⇒ 개발자 사이트 https://developers.kakao.com/ 에서 개발자등록을 하고 앱을 생성한다.
+
+내 안드로이드 프로젝트 파일의 패키지명이 필요하다.
+
+패키지명은 프로젝트 파일 중 AndroidManifest.xml 상단에서 확인할 수 있다.
+
+해시키 구하는 코드
+
+// 앱... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/jekyll-theme-yat/tags.html#Android">#Android</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Kotlin">#Kotlin</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#KaKao%20Map">#KaKao Map</a><a class="post-tag" href="/jekyll-theme-yat/tags.html#Study">#Study</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/todo/2022/09/07/20220907.html">
+          깃허브 프로필 꾸미기😃
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 07, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/todo/2022/09/07/20220907.html">
+        <p>
+        오늘 내가 꼭 하고싶은 것
+
+⇒ 깃허브 프로필 꾸미기😃
+
+프로필 생성하기
+
+GitHub에는 여러 이스터에그가 있는데, username.github.io 이름의 repository를 생성하면 이 블로그처럼 GitHub Pages를 활용한 블로그를 생성할 수 있다. 프로필 또한 이 이스터에그 중 하나로 github user name과 동일한 이름의 repository를 만들면 You found a secret!이라는 메시지와 함께 README.md 파일로 깃헙 프로필을 작성할 수 있음으로 알려준다.
+
+Github 접속 &gt; Repository &gt; New 클릭하여 신규 repository를 생성해준 뒤 이름을 ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#TODO">#TODO</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/todo/2022/09/06/20220906.html">
+          2022-09-06(화요일)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 06, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/todo/2022/09/06/20220906.html">
+        <p>
+        오늘 내가 한 일
+
+
+  
+    안드로이드 UI/UX 관련된 자료 찾아보기
+
+     → 찾아본 것 : [https://kplog.tistory.com/164](https://kplog.tistory.com/164)
+
+                 [https://brunch.co.kr/@jihoonleeh9l6/16](https://brunch.co.kr/@jihoonleeh9l6/16)
+
+                       [https://0391kjy.tistory.com/43](https://0391kjy.tistory.com/43)
+    
+  
+  안드로이드 개발
+  OCU 수업 듣기
+  dp, ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#TODO">#TODO</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/todo/2022/09/05/20220905.html">
+          2022-09-05(월요일)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 05, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/todo/2022/09/05/20220905.html">
+        <p>
+        오늘 내가 한 일
+
+
+  k-해커톤 개발
+  프로그래머스 - level1 (내적) 문제 풀기 (아직 풀지 못함)
+  캡스톤 아이디어 준비 (아직까지 생각이 잘 안남 ㅠㅠ)
+  수업 듣기 전 html, css에 관해서 찾아보기
+
+ <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#TODO">#TODO</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/jekyll-theme-yat/algorithm/2022/09/02/algorithm.html">
+          없는 숫자 더하기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Sep 02, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/jekyll-theme-yat/algorithm/2022/09/02/algorithm.html">
+        <p>
+        오늘 내가 한 일
+
+
+  깃허브 레포지토리 생성
+  intellij - 학생인증 완료
+  프로그래머스 코딩문제 풀이
+  최초 커밋
+
+
+오늘 내가 푼 코딩테스트 문제
+
+level1 - 없는 숫자 더하기
+
+⇒ https://school.programmers.co.kr/learn/courses/30/lessons/86051
+
+class Solution {
+    fun solution(numbers: IntArray): Int {
+    var answer:Int = 0
+
+    var numberarray = arrayListOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+    var array = Ar... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/jekyll-theme-yat/tags.html#algorithm">#algorithm</a></div>
+    </li>
+</ul>
+
+  <!-- Pagination links -->
+</div>
+</div>
+
+
+  </section>
+  <section class="sidebar" style="margin-left: 15px;">
+    <!-- Get sidebar items -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="common-list">
+  <ul>
+    <li>
+      <a href="/jekyll-theme-yat/index.html">
+        All<span>77</span>
+      </a>
+    </li>
+
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Android">
+          Android <span>3</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-DS">
+          DS <span>21</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Kotlin">
+          Kotlin <span>9</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Review">
+          Review <span>4</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Study">
+          Study <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-Swift">
+          Swift <span>11</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-TODO">
+          TODO <span>11</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/jekyll-theme-yat/categories.html#h-algorithm">
+          algorithm <span>16</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+</section>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/jekyll-theme-yat/"></data>
+
+  <div class="wrapper">
+    <div class="site-footer-inner">
+<div>Unpublished Work <span class="copyleft">©</span> 2017-2023 GitHub User</div>
+      <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
+      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/jekyll-theme-yat/feed.xml">via RSS</a>
+</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
